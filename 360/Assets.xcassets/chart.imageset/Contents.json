@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "debate.png",
+      "filename" : "chart.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "debate-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "debate-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
