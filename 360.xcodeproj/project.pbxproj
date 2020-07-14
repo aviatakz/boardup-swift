@@ -19,6 +19,7 @@
 		A3EAE54024B71BE3006B41C7 /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE53F24B71BE3006B41C7 /* ProfileViewPresenter.swift */; };
 		A3EAE54424B852D2006B41C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE54324B852D2006B41C7 /* User.swift */; };
 		A3EAE54624B8543C006B41C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EAE54524B8543C006B41C7 /* data.json */; };
+		C590775324BCA3D900DBA0EF /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590775224BCA3D900DBA0EF /* DesignableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A3EAE53F24B71BE3006B41C7 /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
 		A3EAE54324B852D2006B41C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3EAE54524B8543C006B41C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C590775224BCA3D900DBA0EF /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A353DD7424B6F270001AE486 /* Main.storyboard */,
+				C590775224BCA3D900DBA0EF /* DesignableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */,
 				A3EAE54024B71BE3006B41C7 /* ProfileViewPresenter.swift in Sources */,
 				A3EAE54424B852D2006B41C7 /* User.swift in Sources */,
+				C590775324BCA3D900DBA0EF /* DesignableView.swift in Sources */,
 				A353DD7324B6F270001AE486 /* ViewController.swift in Sources */,
 				A329C48B24BD825F00EE1057 /* PersoneTVC.swift in Sources */,
 				A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */,
