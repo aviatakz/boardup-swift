@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  360
 //
-//  Created by Adilzhan Akhayev on 7/9/20.
+//  Created by Adilzhan Akhayev on 7/15/20.
 //  Copyright © 2020 Adilzhan. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    
+    //asdfjndslj
 
     @IBAction func loginPressed(_ sender: UIButton) {
 //        if let email = emailTextfield.text, let password = passwordTextfield.text{
