@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wJn-aF-ebT">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -32,9 +32,10 @@
             <objects>
                 <viewController id="fwC-YQ-1gn" customClass="ProfileViewPresenter" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voL-dg-Qrb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="0lA-j6-Y7Z">
                                 <rect key="frame" x="132" y="108" width="150" height="150"/>
                                 <constraints>
@@ -143,10 +144,12 @@
                             <constraint firstItem="8x5-vP-y6L" firstAttribute="leading" secondItem="v0n-ye-XRG" secondAttribute="leading" constant="20" id="vQX-a1-5MO"/>
                             <constraint firstItem="9H7-OW-A0e" firstAttribute="top" secondItem="oji-4b-oqW" secondAttribute="bottom" constant="10" id="zbS-Uz-8hh"/>
                         </constraints>
+
                         <viewLayoutGuide key="safeArea" id="v0n-ye-XRG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="OPc-1w-PSE"/>
                     <navigationItem key="navigationItem" id="l9r-2W-qc4"/>
+
                     <connections>
                         <outlet property="BoxView" destination="9H7-OW-A0e" id="n3y-Do-FjY"/>
                         <outlet property="BoxView2" destination="oji-4b-oqW" id="c8x-j0-nR5"/>
@@ -158,17 +161,18 @@
                         <outlet property="PositionLabel" destination="RJk-b5-SfA" id="mk8-Af-DDH"/>
                         <outlet property="UserImage" destination="0lA-j6-Y7Z" id="lEg-WQ-Eig"/>
                     </connections>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84g-0E-LpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143.47826086956522" y="894.64285714285711"/>
+            <point key="canvasLocation" x="146" y="896"/>
         </scene>
         <!--Diagram-->
         <scene sceneID="aya-KG-o8I">
             <objects>
                 <viewController id="PCi-bK-QEh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYj-oy-y9R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-63-BWZ">
@@ -304,6 +308,7 @@
         <!--Questions-->
         <scene sceneID="ogm-kZ-guU">
             <objects>
+
                 <viewController id="NY7-fa-Lbe" customClass="QuestionsPresenter" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUZ-3s-VkG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -433,16 +438,18 @@
                     <connections>
                         <outlet property="tableView" destination="2n6-1J-Hhj" id="PW8-sP-vRz"/>
                     </connections>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4X3-Xf-pGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="895.98214285714278"/>
+            <point key="canvasLocation" x="2012" y="896"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="mRW-AH-bW7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0K-o3-wKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="83t-uz-hlr" customClass="LoginViewController" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="mpU-SI-d50">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -475,6 +482,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="t1h-TG-d96"/>
+
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -482,10 +490,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
+
                                                             <constraint firstAttribute="bottom" secondItem="Jru-gF-F5v" secondAttribute="bottom" id="Jo9-5I-onv"/>
                                                             <constraint firstItem="Jru-gF-F5v" firstAttribute="top" secondItem="2BJ-6U-BSt" secondAttribute="top" id="Mcb-kA-GFc"/>
                                                             <constraint firstAttribute="trailing" secondItem="Jru-gF-F5v" secondAttribute="trailing" id="MlP-CA-PUE"/>
                                                             <constraint firstItem="Jru-gF-F5v" firstAttribute="leading" secondItem="2BJ-6U-BSt" secondAttribute="leading" id="bmQ-Sr-fSr"/>
+
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -499,6 +509,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-1J-zwT" customClass="DesignableView" customModule="_60" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="70" width="382" height="50"/>
                                                         <subviews>
@@ -510,10 +521,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
+
                                                             <constraint firstItem="eNc-2D-1Ac" firstAttribute="top" secondItem="cGe-1J-zwT" secondAttribute="top" id="8QT-ar-lbT"/>
                                                             <constraint firstAttribute="bottom" secondItem="eNc-2D-1Ac" secondAttribute="bottom" id="HRr-aT-zES"/>
                                                             <constraint firstItem="eNc-2D-1Ac" firstAttribute="leading" secondItem="cGe-1J-zwT" secondAttribute="leading" id="Qlr-vN-brh"/>
                                                             <constraint firstAttribute="trailing" secondItem="eNc-2D-1Ac" secondAttribute="trailing" id="dcw-kp-kyE"/>
+
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -529,6 +542,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-R6-AsS" customClass="DesignableView" customModule="_60" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="182" width="382" height="50"/>
                                                 <subviews>
@@ -538,6 +552,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="FSA-i5-t4K"/>
                                                             <constraint firstAttribute="height" constant="50" id="oTq-xu-9sV"/>
+
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
                                                         <state key="normal" title="Sign in">
@@ -628,6 +643,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="U1n-0B-jK2"/>
                                                     <constraint firstAttribute="bottom" secondItem="YpX-r8-Awj" secondAttribute="bottom" id="qC9-5K-lm7"/>
                                                     <constraint firstItem="YpX-r8-Awj" firstAttribute="top" secondItem="7tn-A0-534" secondAttribute="top" id="ueh-4w-f6a"/>
+
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -646,6 +662,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="7Tb-AL-O4J">
                                         <rect key="frame" x="16" y="478" width="382" height="288"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -656,6 +673,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+
                             <constraint firstItem="sAz-Ac-qcI" firstAttribute="bottom" secondItem="exy-Wb-enW" secondAttribute="bottom" id="7GT-YS-eiZ"/>
                             <constraint firstItem="exy-Wb-enW" firstAttribute="top" secondItem="sAz-Ac-qcI" secondAttribute="top" id="O57-p5-Zqf"/>
                             <constraint firstItem="exy-Wb-enW" firstAttribute="trailing" secondItem="sAz-Ac-qcI" secondAttribute="trailing" id="RU9-u7-YqJ"/>
@@ -667,6 +685,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="Jru-gF-F5v" id="EN3-Ew-pZe"/>
                         <outlet property="passwordTextfield" destination="eNc-2D-1Ac" id="DIH-TD-d9X"/>
+
                         <segue destination="dqE-5P-ad5" kind="show" identifier="AfterLogin" id="nvW-K9-MOA"/>
                     </connections>
                 </viewController>
@@ -680,7 +699,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wJn-aF-ebT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NOt-ej-q6V">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -697,7 +716,6 @@
         <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
         <image name="google-logo" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person" width="250" height="333.33334350585938"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
