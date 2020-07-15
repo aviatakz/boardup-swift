@@ -695,9 +695,9 @@
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="121"/>
         <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
-        <image name="google-logo" width="128" height="128"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="google-logo" width="360" height="360"/>
         <image name="person" width="250" height="333.33334350585938"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
