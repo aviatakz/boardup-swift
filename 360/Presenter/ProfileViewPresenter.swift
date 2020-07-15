@@ -15,11 +15,13 @@ class ProfileViewPresenter: UIViewController {
     @IBOutlet weak var PositionLabel: UILabel!
     @IBOutlet weak var Department: UILabel!
     @IBOutlet weak var Position: UILabel!
+    @IBOutlet weak var BoxView: UIView!
+    @IBOutlet weak var BoxView2: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      var data = parse(pathForFile: Bundle.main.path(forResource: "data", ofType: "json")!)
+        let data = parse(pathForFile: Bundle.main.path(forResource: "data", ofType: "json")!)
         // Do any additional setup after loading the view.
         UserImage.image = UIImage(named: "person")
         UserImage.layer.cornerRadius = UserImage.frame.size.width / 2
@@ -29,6 +31,10 @@ class ProfileViewPresenter: UIViewController {
         EmailLabel.text = data[0].email
         DepartmentLabel.text = data[0].group[0].name
         
+        BoxView.layer.cornerRadius = 7
+        BoxView.layer.masksToBounds = true
+        BoxView2.layer.cornerRadius = 7
+        BoxView2.layer.masksToBounds = true
         
     
     }

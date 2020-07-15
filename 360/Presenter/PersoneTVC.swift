@@ -7,19 +7,23 @@
 //
 
 import UIKit
-
+@IBDesignable
 class PersoneTVC: UITableViewCell {
 
     @IBOutlet weak var ContentTVCview: UIView!
+    @IBOutlet weak var subContentTVCview: UIView!
     @IBOutlet weak var PersoneImg: UIImageView!
     @IBOutlet weak var PersoneNameSurnameLBL: UILabel!
     @IBOutlet weak var PersoneInfoLBL: UILabel!
+    @IBOutlet weak var DoneColorView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
                PersoneImg.image = UIImage(named: "person")
                PersoneImg.layer.cornerRadius = PersoneImg.frame.size.width / 2
                PersoneImg.clipsToBounds = true
+        subContentTVCview.layer.cornerRadius = 7
+        subContentTVCview.layer.masksToBounds = true
     }
  
 
