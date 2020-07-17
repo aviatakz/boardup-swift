@@ -1,0 +1,16 @@
+PODS:
+  - RadarChartView (1.0.0)
+
+DEPENDENCIES:
+  - RadarChartView
+
+SPEC REPOS:
+  trunk:
+    - RadarChartView
+
+SPEC CHECKSUMS:
+  RadarChartView: 78de2822ff4c21b339b8087f168065f82931417e
+
+PODFILE CHECKSUM: 18f8acf25bdb35a465794d0f2b4f682e9fb5855c
+
+COCOAPODS: 1.9.3
