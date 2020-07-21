@@ -15,15 +15,17 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var questionCount = 20
-//    @IBOutlet weak var pageControl: UIPageControl!
+    
     let pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 500, height: 40))
+    
     let labelCurrentPage : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+    
     var contentWidth:CGFloat = 0.0
     
     var lightGreen : UIColor = UIColor(red: 0.00, green: 0.74, blue: 0.00, alpha: 1.00)
     var whiteText : UIColor = UIColor(red: 0.97, green: 0.98, blue: 0.98, alpha: 1.00)
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -77,8 +79,8 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
             
             contentWidth += view.frame.width
         }
-        scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height)
-        // Do any additional setup after loading the view.
+        
+        scrollView.contentSize = CGSize(width: contentWidth, height: 1.0)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
