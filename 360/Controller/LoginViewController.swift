@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import GoogleSignIn
 //import Firebase
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController  {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+
+        // Automatically sign in the user.
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        if GIDSignIn.sharedInstance()?.currentUser != nil{
+            self.performSegue(withIdentifier: "AfterLogin", sender: self)
+        }else{
+            print("Not signed in")
+        }
+    }
 
     @IBAction func loginPressed(_ sender: UIButton) {
 //        if let email = emailTextfield.text, let password = passwordTextfield.text{
