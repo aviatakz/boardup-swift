@@ -6,5 +6,10 @@ target '360' do
   use_frameworks!
 
   # Pods for 360
+
+	#pod is old chart for prototype
 	pod "RadarChartView"
+
+	#pod for Gsin
+	pod "GoogleSignIn"
 end

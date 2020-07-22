@@ -609,7 +609,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lsZ-Ja-fiC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -678,46 +678,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-GT-fP1" customClass="DesignableView" customModule="_60" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-GT-fP1">
                                                 <rect key="frame" x="0.0" y="252" width="382" height="50"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-FH-egh">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-FH-egh" customClass="GIDSignInButton">
                                                         <rect key="frame" x="20" y="0.0" width="342" height="50"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="tFa-oq-WOp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdR-Xz-Q3x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="50"/>
-                                                                        <state key="normal" title="Sign in with Google">
-                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-logo" translatesAutoresizingMaskIntoConstraints="NO" id="CEq-8h-54W">
-                                                                        <rect key="frame" x="242" y="0.0" width="100" height="50"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="50" id="emM-Z9-5eT"/>
-                                                                            <constraint firstAttribute="width" constant="100" id="toC-Jv-Ito"/>
-                                                                        </constraints>
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="CEq-8h-54W" firstAttribute="leading" secondItem="AdR-Xz-Q3x" secondAttribute="trailing" id="8KT-cu-dMN"/>
-                                                                    <constraint firstItem="CEq-8h-54W" firstAttribute="top" secondItem="tFa-oq-WOp" secondAttribute="top" id="XV4-0T-t9L"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="CEq-8h-54W" secondAttribute="bottom" id="bEb-ZW-26t"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="CEq-8h-54W" secondAttribute="trailing" id="eX9-q0-HpR"/>
-                                                                    <constraint firstItem="CEq-8h-54W" firstAttribute="leading" secondItem="AdR-Xz-Q3x" secondAttribute="trailing" id="tY8-j6-uBa"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="tFa-oq-WOp" secondAttribute="trailing" id="N9B-cM-tXT"/>
-                                                            <constraint firstItem="tFa-oq-WOp" firstAttribute="leading" secondItem="wh9-FH-egh" secondAttribute="leading" id="X3J-KY-gKk"/>
-                                                            <constraint firstItem="tFa-oq-WOp" firstAttribute="top" secondItem="wh9-FH-egh" secondAttribute="top" id="ZXE-1x-qv2"/>
-                                                            <constraint firstAttribute="bottom" secondItem="tFa-oq-WOp" secondAttribute="bottom" id="q7P-fY-Mat"/>
-                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <integer key="value" value="25"/>
@@ -795,7 +761,6 @@
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="121"/>
         <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
-        <image name="google-logo" width="1080" height="1080"/>
         <image name="person" width="250" height="333.33334350585938"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
