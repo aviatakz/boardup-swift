@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KKA-DV-Sdh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KKA-DV-Sdh">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -439,13 +439,20 @@
                                                             <rect key="frame" x="90" y="15" width="274" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matilda Brown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gQ-SP-Z4M">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztu-bb-k5u">
+                                                                    <rect key="frame" x="0.0" y="16" width="274" height="16"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <connections>
+                                                                        <segue destination="iQr-m6-IES" kind="show" id="Rxw-SB-urx"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR | Директор" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQU-Ia-tcf">
-                                                                    <rect key="frame" x="0.0" y="24" width="274" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="32" width="274" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -541,7 +548,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4X3-Xf-pGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2986" y="1019"/>
+            <point key="canvasLocation" x="2965" y="1019"/>
+        </scene>
+        <!--Survey View Controller-->
+        <scene sceneID="6l0-T1-9LD">
+            <objects>
+                <viewController id="iQr-m6-IES" customClass="SurveyViewController" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CTB-N1-btL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj1-dY-Z8R">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u1I-Gz-7rc" firstAttribute="bottom" secondItem="nj1-dY-Z8R" secondAttribute="bottom" id="0mU-HN-UK1"/>
+                            <constraint firstItem="nj1-dY-Z8R" firstAttribute="leading" secondItem="u1I-Gz-7rc" secondAttribute="leading" id="YUq-gF-LW1"/>
+                            <constraint firstItem="nj1-dY-Z8R" firstAttribute="top" secondItem="u1I-Gz-7rc" secondAttribute="top" id="ezd-Od-Pd8"/>
+                            <constraint firstItem="u1I-Gz-7rc" firstAttribute="trailing" secondItem="nj1-dY-Z8R" secondAttribute="trailing" id="yPP-cg-3jG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u1I-Gz-7rc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uhM-F1-OwL"/>
+                    <connections>
+                        <outlet property="mainView" destination="CTB-N1-btL" id="5j0-2f-ay0"/>
+                        <outlet property="scrollView" destination="nj1-dY-Z8R" id="FkB-LC-Su5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMU-G1-YFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3777" y="1019"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="0F8-EI-QYA">
