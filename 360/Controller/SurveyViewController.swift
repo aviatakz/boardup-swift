@@ -25,6 +25,8 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     var lightGreen : UIColor = UIColor(red: 0.00, green: 0.74, blue: 0.00, alpha: 1.00)
     var whiteText : UIColor = UIColor(red: 0.97, green: 0.98, blue: 0.98, alpha: 1.00)
     
+    var customFont : UIFont = UIFont(name: "Montserrat", size: 17)!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
         labelCurrentPage.frame.origin.y = (view.frame.midY / 2) - 80
         labelCurrentPage.textAlignment = .center
         labelCurrentPage.text = "1/20"
+        labelCurrentPage.font = customFont
         
         pageControl.frame.origin.x = view.frame.midX - 250
         pageControl.frame.origin.y = view.frame.midY
@@ -63,6 +66,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
             labelToDisplay.lineBreakMode = .byWordWrapping
             labelToDisplay.numberOfLines = 0
             labelToDisplay.textColor = whiteText
+            labelToDisplay.font = customFont
             
             let labelMax = UILabel(frame: CGRect(x: xCoordinate + 110, y: view.frame.midY + 30, width: 40, height: 40))
             let labelMin = UILabel(frame: CGRect(x: xCoordinate - 150, y: view.frame.midY + 30, width: 40, height: 40))
@@ -70,6 +74,8 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
             labelMax.text = "10"
             labelMin.textAlignment = .center
             labelMax.textAlignment = .center
+            labelMin.font = customFont
+            labelMax.font = customFont
             
             scrollView.addSubview(labelMax)
             scrollView.addSubview(labelMin)
