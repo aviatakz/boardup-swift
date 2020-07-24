@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="zsO-0M-J7f">
@@ -17,6 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="fwC-YQ-1gn" kind="relationship" relationship="viewControllers" id="FmI-Xk-H5r"/>
@@ -44,17 +51,17 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8x5-vP-y6L">
-                                <rect key="frame" x="20" y="268" width="374" height="54.666666666666686"/>
+                                <rect key="frame" x="20" y="268" width="374" height="55.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matilda Brown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NC-lR-wjt">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="matildabrown@mail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCB-WR-JCw">
-                                        <rect key="frame" x="0.0" y="29.333333333333314" width="374" height="25.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="29.666666666666686" width="374" height="25.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -67,20 +74,20 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oji-4b-oqW">
-                                <rect key="frame" x="30" y="347.66666666666669" width="354" height="84"/>
+                                <rect key="frame" x="30" y="348.33333333333331" width="354" height="84"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Yu-VW-qeK">
                                         <rect key="frame" x="20" y="10" width="314" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Должность" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tv-O0-Mej">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Директор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJk-b5-SfA">
                                                 <rect key="frame" x="0.0" y="32" width="314" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -98,20 +105,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9H7-OW-A0e">
-                                <rect key="frame" x="30" y="441.66666666666669" width="354" height="84.000000000000057"/>
+                                <rect key="frame" x="30" y="442.33333333333331" width="354" height="83.999999999999943"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Cs0-J3-Dol">
                                         <rect key="frame" x="20" y="10" width="314" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Департамент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ff-Nc-Snn">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-DO-BYR">
                                                 <rect key="frame" x="0.0" y="32" width="314" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -146,7 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v0n-ye-XRG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="OPc-1w-PSE"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="userActive" id="OPc-1w-PSE"/>
                     <navigationItem key="navigationItem" id="l9r-2W-qc4"/>
                     <connections>
                         <outlet property="BoxView" destination="oji-4b-oqW" id="UHd-7M-0sx"/>
@@ -197,13 +204,13 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество оцениваемых" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTs-kp-vXh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="332" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                                         <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iz-zq-RR4">
                                                                         <rect key="frame" x="0.0" y="37" width="332" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -228,13 +235,13 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib8-1d-KVe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="332" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                                         <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.07.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOg-Ye-sd2">
                                                                         <rect key="frame" x="0.0" y="37" width="332" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -280,7 +287,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="QO4-Q1-Isw"/>
                                                                     <constraint firstAttribute="height" constant="31" id="xQY-Ej-6vn"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -316,7 +323,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="NVQ-ET-kNU"/>
                                                                     <constraint firstAttribute="height" constant="31" id="gTz-kA-9mA"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -352,7 +359,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5Er-6a-QtA"/>
                                                                     <constraint firstAttribute="height" constant="31" id="d4M-bp-DL4"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -394,7 +401,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jzI-pW-aRP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Diagram" image="chart.pie" catalog="system" selectedImage="chart.pie.fill" id="bdV-j5-65B"/>
+                    <tabBarItem key="tabBarItem" title="Diagram" image="chart" selectedImage="diagramActive" id="bdV-j5-65B"/>
                     <navigationItem key="navigationItem" id="9nq-TQ-e6J"/>
                     <connections>
                         <outlet property="DateEvalutedLabel" destination="BOg-Ye-sd2" id="Zg9-BZ-0cL"/>
@@ -440,7 +447,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matilda Brown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gQ-SP-Z4M">
                                                                     <rect key="frame" x="0.0" y="0.0" width="274" height="16"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -453,7 +460,7 @@
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR | Директор" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQU-Ia-tcf">
                                                                     <rect key="frame" x="0.0" y="32" width="274" height="16"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -540,7 +547,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xvF-C2-r2W"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Questions" image="questionmark.circle" catalog="system" selectedImage="questionmark.circle.fill" id="xMk-zC-OPZ"/>
+                    <tabBarItem key="tabBarItem" title="Questions" image="checklist" selectedImage="checklistActive" id="xMk-zC-OPZ"/>
                     <navigationItem key="navigationItem" id="9GM-NO-uXD"/>
                     <connections>
                         <outlet property="tableView" destination="2n6-1J-Hhj" id="PW8-sP-vRz"/>
@@ -593,22 +600,33 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHf-DJ-ep2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="u2A-LX-xDq">
-                                        <rect key="frame" x="0.0" y="216" width="414" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360 app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP3-1p-HU4">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360icon" translatesAutoresizingMaskIntoConstraints="NO" id="fZh-fp-vBp">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fZh-fp-vBp" secondAttribute="bottom" id="RIX-Up-pdV"/>
+                                            <constraint firstItem="fZh-fp-vBp" firstAttribute="leading" secondItem="VHf-DJ-ep2" secondAttribute="leading" id="cKB-LQ-Zts"/>
+                                            <constraint firstItem="fZh-fp-vBp" firstAttribute="top" secondItem="VHf-DJ-ep2" secondAttribute="top" id="dxV-6Q-Qsa"/>
+                                            <constraint firstAttribute="trailing" secondItem="fZh-fp-vBp" secondAttribute="trailing" id="ixW-ey-lrc"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="u2A-LX-xDq">
+                                        <rect key="frame" x="0.0" y="288" width="414" height="198"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="360 app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP3-1p-HU4">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="52.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-5M-t9t">
-                                                <rect key="frame" x="0.0" y="126" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="72.666666666666686" width="414" height="52.666666666666657"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8j-wU-1J1" customClass="GIDSignInButton">
-                                                        <rect key="frame" x="20" y="-25" width="374" height="50"/>
+                                                        <rect key="frame" x="20" y="1.3333333333333144" width="374" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="g5U-A1-3Ca"/>
@@ -621,17 +639,17 @@
                                                     <constraint firstAttribute="trailing" secondItem="d8j-wU-1J1" secondAttribute="trailing" constant="20" id="Wa0-z5-mRk"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMO-E9-uPy">
+                                                <rect key="frame" x="0.0" y="145.33333333333337" width="414" height="52.666666666666657"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <segue destination="dqE-5P-ad5" kind="show" id="eYs-Kf-EvJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMO-E9-uPy">
-                                        <rect key="frame" x="0.0" y="432" width="414" height="126"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="dqE-5P-ad5" kind="show" id="ZAb-W7-eab"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjq-iY-S8K">
-                                        <rect key="frame" x="0.0" y="648" width="414" height="126"/>
+                                        <rect key="frame" x="0.0" y="576" width="414" height="198"/>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -671,13 +689,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chart.pie" catalog="system" width="128" height="121"/>
-        <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="360icon" width="1024" height="1024"/>
+        <image name="chart" width="25" height="25"/>
+        <image name="checklist" width="25" height="25"/>
+        <image name="checklistActive" width="25" height="25"/>
+        <image name="diagramActive" width="25" height="25"/>
         <image name="person" width="250" height="333.33334350585938"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="user" width="25" height="25"/>
+        <image name="userActive" width="25" height="25"/>
         <namedColor name="ColleguesColor">
             <color red="0.26899999380111694" green="0.57899999618530273" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

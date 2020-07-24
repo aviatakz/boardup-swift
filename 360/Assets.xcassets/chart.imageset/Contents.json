@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chart.png",
+      "filename" : "chart25p.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "chart50p.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "chart75p.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
