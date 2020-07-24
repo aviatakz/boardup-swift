@@ -53,7 +53,7 @@ struct QuestionsData {
     }
     
     func getProgress() -> Float{
-        var answer = Float(getDoneCount()) / Float(getAllTaskCount())
+        let answer = Float(getDoneCount()) / Float(getAllTaskCount())
         return answer
     }
     func getDoneCount() -> Int {
