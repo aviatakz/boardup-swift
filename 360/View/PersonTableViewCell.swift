@@ -8,29 +8,33 @@
 
 import UIKit
 @IBDesignable
-class PersoneTVC: UITableViewCell {
+class PersonTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var ContentTVCview: UIView!
     @IBOutlet weak var subContentTVCview: UIView!
-    @IBOutlet weak var PersoneImg: UIImageView!
-    @IBOutlet weak var PersoneNameSurnameLBL: UILabel!
-    @IBOutlet weak var PersoneInfoLBL: UILabel!
-    @IBOutlet weak var DoneColorView: UIView!
+    @IBOutlet weak var personeImg: UIImageView!
+    @IBOutlet weak var personeNameAndSurnameLalel: UILabel!
+    @IBOutlet weak var personeInfoLabel: UILabel!
+    @IBOutlet weak var doneColorView: UIView!
+    
+    
+    let viewDesign = ViewDesign()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-               PersoneImg.image = UIImage(named: "person")
-               PersoneImg.layer.cornerRadius = PersoneImg.frame.size.width / 2
-               PersoneImg.clipsToBounds = true
+               personeImg.image = UIImage(named: "person")
+               personeImg.layer.cornerRadius = personeImg.frame.size.width / 2
+               personeImg.clipsToBounds = true
         subContentTVCview.layer.cornerRadius = 7
         subContentTVCview.layer.masksToBounds = true
+        
     }
  
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        
     }
 
 }

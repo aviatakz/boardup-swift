@@ -23,7 +23,7 @@ class LoginViewController: UIViewController  {
         // Automatically sign in the user.
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         if GIDSignIn.sharedInstance()?.currentUser != nil{
-            self.performSegue(withIdentifier: "AfterLogin", sender: self)
+            self.performSegue(withIdentifier: Key.Identifier.signIn, sender: self)
         }else{
             print("Not signed in")
         }
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController  {
 //        }
 //
 //        }
-        self.performSegue(withIdentifier: "AfterLogin", sender: self)
+        self.performSegue(withIdentifier: Key.Identifier.signIn, sender: self)
     }
     
 }

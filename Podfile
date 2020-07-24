@@ -7,8 +7,8 @@ target '360' do
 
   # Pods for 360
 
-	#pod is old chart for prototype
-	pod "RadarChartView"
+	#pod for charts
+	pod 'Charts'
 
 	#pod for Gsin
 	pod "GoogleSignIn"
