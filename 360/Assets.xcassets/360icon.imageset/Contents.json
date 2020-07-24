@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "checklist25p.png",
+      "filename" : "360icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "checklist50p.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "checklist75p.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

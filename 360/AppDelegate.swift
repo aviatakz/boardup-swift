@@ -39,8 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let familyName = user.profile.familyName
         let email = user.profile.email
         // ...
-        print(fullName)
-        print(email)
+        print(userId ?? 0, idToken ?? 0, fullName ?? 0, givenName ?? 0, familyName ?? 0, email ?? 0, separator: "\n")
     }
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
