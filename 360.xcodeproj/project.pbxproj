@@ -34,6 +34,7 @@
 		A3EAE54624B8543C006B41C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EAE54524B8543C006B41C7 /* data.json */; };
 		C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50443C024C454E4003CA29C /* SurveyViewController.swift */; };
 		C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */; };
+		C520685C24CD990A0029D1E4 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520685B24CD990A0029D1E4 /* Interview.swift */; };
 		C5888BF524BF22FC0074F805 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5888BF424BF22FC0074F805 /* DesignableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		A3EAE54524B8543C006B41C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C50443C024C454E4003CA29C /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		C520685B24CD990A0029D1E4 /* Interview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
 		C5888BF424BF22FC0074F805 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		EB0339FDA03230FF4FCA8A82 /* Pods-360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-360.debug.xcconfig"; path = "Target Support Files/Pods-360/Pods-360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 				A3A1F63324C8A88600BAC778 /* ProfileData.swift */,
 				A3A1F63524C8AB8C00BAC778 /* ViewDesign.swift */,
 				A3A1F63724C8B0B900BAC778 /* ChartsView.swift */,
+				C520685B24CD990A0029D1E4 /* Interview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A3A1F63624C8AB8C00BAC778 /* ViewDesign.swift in Sources */,
 				A353DD7124B6F270001AE486 /* SceneDelegate.swift in Sources */,
 				C5888BF524BF22FC0074F805 /* DesignableView.swift in Sources */,
+				C520685C24CD990A0029D1E4 /* Interview.swift in Sources */,
 				A3A1F63A24C8B52D00BAC778 /* RadarChartXValueFormatter.swift in Sources */,
 				A3A1F63424C8A88600BAC778 /* ProfileData.swift in Sources */,
 			);
@@ -488,13 +492,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JL2KKDNH2C;
+				DEVELOPMENT_TEAM = 9RSGP9843T;
 				INFOPLIST_FILE = 360/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "GuarX.-60";
+				PRODUCT_BUNDLE_IDENTIFIER = XDev.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,13 +511,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JL2KKDNH2C;
+				DEVELOPMENT_TEAM = 9RSGP9843T;
 				INFOPLIST_FILE = 360/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "GuarX.-60";
+				PRODUCT_BUNDLE_IDENTIFIER = XDev.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
