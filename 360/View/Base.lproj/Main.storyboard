@@ -598,7 +598,7 @@
                                         <rect key="frame" x="0.0" y="253.33333333333331" width="375" height="183.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360 app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqw-If-6jf">
-                                                <rect key="frame" x="125.33333333333334" y="0.0" width="124.33333333333334" height="23.333333333333332"/>
+                                                <rect key="frame" x="132.33333333333334" y="0.0" width="110.33333333333334" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -696,7 +696,7 @@
             <color red="0.61699998378753662" green="0.2199999988079071" blue="0.21600000560283661" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightGreen">
-            <color red="0.0" green="0.73999999999999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.74000000953674316" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

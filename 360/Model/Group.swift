@@ -8,14 +8,12 @@
 
 import Foundation
 
-struct Group{
+struct Group : Decodable {
     let id: Int
     var name: String
-    let created_at: String
-    init(dict: [String: Any]) {
-        id = dict["id"] as? Int ?? 0
-        name = dict["name"] as? String ?? ""
-        created_at = dict["created_at"] as? String ?? ""
-    }
-
+//    init(dict: [String: Any]) {
+//        id = dict["id"] as? Int ?? 0
+//        name = dict["name"] as? String ?? ""
+//        created_at = dict["created_at"] as? String ?? ""
+//    }
 }
