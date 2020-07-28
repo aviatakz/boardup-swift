@@ -21,15 +21,21 @@ class ProfileViewController: UIViewController {
     
     let data = ProfileData()
     let viewDesign = ViewDesign()
-    let rest = RestManager()
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getSingleUser()
+        DataFromApi.getSingleUser { (user) in
+            DispatchQueue.main.async {
+                self.nameAndsurnameLabel.text = user.username
+                self.emailAddressLabel.text = user.email!
+            }
+        }
+        
+            
         userImage.image = data.getUserImage()
-        nameAndsurnameLabel.text = data.getNameandSurname()
-        emailAddressLabel.text = data.getEmail()
+        
         
         viewDesign.userImageDesign(userImage)
         viewDesign.boxViewDesign(boxView)
@@ -38,18 +44,5 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func getSingleUser() {
-        guard let url = URL(string: "http://46.101.246.71:8000/users/4") else { return }
-        rest.urlQueryParameters.add(value: "json", forKey: "format")
-        print(url)
-        rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
-            if let data = results.data {
-                print(data)
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let user = try? decoder.decode(User.self, from: data) else { return }
-                print(user)
-            }
-        }
-    }
+
 }
