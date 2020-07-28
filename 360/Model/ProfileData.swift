@@ -11,18 +11,18 @@ import UIKit
 
 struct ProfileData {
     
-    let data = parse(pathForFile: Bundle.main.path(forResource: "data", ofType: "json")!)
+    //let data = parse(pathForFile: Bundle.main.path(forResource: "data", ofType: "json")!)
     
     func getUserImage() -> UIImage?{
         return UIImage(named: "person")
     }
     
     func getNameandSurname() -> String {
-        return data[0].username
+        return "data[0].username"
     }
     
     func getEmail() -> String {
-        return data[0].email
+        return "data[0].email"
     }
     
 }
