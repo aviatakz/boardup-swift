@@ -15,7 +15,7 @@
 		A353DD7624B6F270001AE486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A353DD7424B6F270001AE486 /* Main.storyboard */; };
 		A353DD7824B6F272001AE486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A353DD7724B6F272001AE486 /* Assets.xcassets */; };
 		A353DD7B24B6F272001AE486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A353DD7924B6F272001AE486 /* LaunchScreen.storyboard */; };
-		A354D41124CEBEC200B75669 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A354D41024CEBEC200B75669 /* Default-568h@2x.png */; };
+		A354D41324D1570200B75669 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354D41224D1570200B75669 /* TabBarController.swift */; };
 		A39FC1D524C18CBA00565D89 /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FC1D424C18CBA00565D89 /* DiagramViewController.swift */; };
 		A3A1F63424C8A88600BAC778 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63324C8A88600BAC778 /* ProfileData.swift */; };
 		A3A1F63624C8AB8C00BAC778 /* ViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63524C8AB8C00BAC778 /* ViewDesign.swift */; };
@@ -51,7 +51,7 @@
 		A353DD7724B6F272001AE486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A353DD7A24B6F272001AE486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A353DD7C24B6F272001AE486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A354D41024CEBEC200B75669 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A354D41224D1570200B75669 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A39FC1D424C18CBA00565D89 /* DiagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		A3A1F63324C8A88600BAC778 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		A3A1F63524C8AB8C00BAC778 /* ViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesign.swift; sourceTree = "<group>"; };
@@ -99,7 +99,6 @@
 		A353DD6224B6F270001AE486 = {
 			isa = PBXGroup;
 			children = (
-				A354D41024CEBEC200B75669 /* Default-568h@2x.png */,
 				A353DD6D24B6F270001AE486 /* 360 */,
 				A353DD6C24B6F270001AE486 /* Products */,
 				C35FFD62B48816FEFFD951BF /* Pods */,
@@ -196,6 +195,7 @@
 				A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */,
 				A353DD7224B6F270001AE486 /* ViewController.swift */,
 				C50443C024C454E4003CA29C /* SurveyViewController.swift */,
+				A354D41224D1570200B75669 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,7 +266,6 @@
 				A353DD7624B6F270001AE486 /* Main.storyboard in Resources */,
 				A3EAE54624B8543C006B41C7 /* data.json in Resources */,
 				C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */,
-				A354D41124CEBEC200B75669 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +344,7 @@
 				A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */,
 				A3EAE54424B852D2006B41C7 /* User.swift in Sources */,
 				A353DD7324B6F270001AE486 /* ViewController.swift in Sources */,
+				A354D41324D1570200B75669 /* TabBarController.swift in Sources */,
 				C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */,
 				A329C48B24BD825F00EE1057 /* PersonTableViewCell.swift in Sources */,
 				A3A1F64124C8CD2100BAC778 /* DataFromApi.swift in Sources */,

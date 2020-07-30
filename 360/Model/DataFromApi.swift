@@ -11,8 +11,8 @@ import Foundation
 struct DataFromApi {
     static let rest = RestManager()
     
-    static func getSingleUser(completion: @escaping (User) -> ())  {
-        guard let url = URL(string: "http://46.101.246.71:8000/users/4") else { return }
+    static func getSingleUser(id:Int,completion: @escaping (User) -> ())  {
+        guard let url = URL(string: "http://46.101.246.71:8000/users/\(id)") else { return }
         rest.urlQueryParameters.add(value: "json", forKey: "format")
         print(url)
         rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
@@ -30,5 +30,26 @@ struct DataFromApi {
             }
         }
     }
+    
+    static func getSurveyList(id:Int,completion: @escaping (User) -> ())  {
+            guard let url = URL(string: "http://46.101.246.71:8000/surveys/\(id)") else { return }
+            rest.urlQueryParameters.add(value: "json", forKey: "format")
+            print(url)
+            rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
+                
+                if let data = results.data {
+                    print(data)
+                    
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    guard let user = try? decoder.decode(User.self, from: data) else { return }
+    //                print(user)
+                    
+                    completion(user)
+                    
+                }
+            }
+        }
+    
 }
 

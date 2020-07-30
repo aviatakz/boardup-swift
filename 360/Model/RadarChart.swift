@@ -82,6 +82,7 @@ struct RadarChart {
         let entries4 = [RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0)]
         
         
+        
         let answer = [entries1,entries2,entries3,entries4]
         
         

@@ -21,7 +21,17 @@ struct ViewDesign {
         boxView.layer.masksToBounds = true
     }
     
-    
+    func getActivityIndicator(view: UIView) -> UIActivityIndicatorView {
+        
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+        
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        
+        view.addSubview(activityIndicator)
+        
+        return activityIndicator
+    }
     
     
 }
