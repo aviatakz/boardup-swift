@@ -57,9 +57,10 @@ class ProfileViewController: UIViewController {
         viewDesign.boxViewDesign(boxView)
         viewDesign.boxViewDesign(boxView2)
         
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
+        self.navigationItem.title = "360"
+    
         
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
 
         
         
@@ -73,7 +74,8 @@ class ProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Alert", message: "Are you Sure You want to Logout", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             GIDSignIn.sharedInstance().signOut()
-            self.navigationController?.popViewController(animated: true)
+//            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
     
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler:nil))
