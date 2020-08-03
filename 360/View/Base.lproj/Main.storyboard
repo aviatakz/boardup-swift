@@ -598,41 +598,21 @@
                                         <rect key="frame" x="0.0" y="268" width="375" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360 app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqw-If-6jf">
-                                                <rect key="frame" x="132.33333333333334" y="0.0" width="110.33333333333334" height="38"/>
+                                                <rect key="frame" x="132.33333333333334" y="0.0" width="110.33333333333334" height="118"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-nv-NGO" customClass="GIDSignInButton">
-                                                <rect key="frame" x="20" y="58" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="138" width="335" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="tGV-fs-M7I"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j6-zt-hhC">
-                                                <rect key="frame" x="20" y="138" width="335" height="60"/>
-                                                <color key="backgroundColor" name="lightGreen"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="0GZ-jt-BgG"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                                <state key="normal" title="Войти">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="25"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="testButton:" destination="qeA-3Q-krx" eventType="touchUpInside" id="M8h-0d-Iaj"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="QU5-nv-NGO" firstAttribute="leading" secondItem="kbs-8e-8uM" secondAttribute="leading" constant="20" id="btD-vK-a3S"/>
-                                            <constraint firstItem="6j6-zt-hhC" firstAttribute="leading" secondItem="kbs-8e-8uM" secondAttribute="leading" constant="20" id="eXl-VA-Y8H"/>
                                             <constraint firstAttribute="trailing" secondItem="QU5-nv-NGO" secondAttribute="trailing" constant="20" id="hOX-vW-UJp"/>
                                         </constraints>
                                     </stackView>
@@ -714,9 +694,6 @@
         </namedColor>
         <namedColor name="YourColor">
             <color red="0.61699998378753662" green="0.2199999988079071" blue="0.21600000560283661" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="lightGreen">
-            <color red="0.0" green="0.74000000953674316" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -22,7 +22,6 @@
 		A3A1F63E24C8CC0A00BAC778 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63D24C8CC0A00BAC778 /* Constants.swift */; };
 		A3A1F64124C8CD2100BAC778 /* DataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */; };
 		A3C34A8F24CA15AD00C7198A /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */; };
-		A3C34A9124CA230400C7198A /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C34A9024CA230400C7198A /* CustomProgressBar.swift */; };
 		A3C34A9324CA271A00C7198A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C34A9224CA271A00C7198A /* Group.swift */; };
 		A3C34A9524CA274100C7198A /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C34A9424CA274100C7198A /* Objects.swift */; };
 		A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */; };
@@ -56,7 +55,6 @@
 		A3A1F63D24C8CC0A00BAC778 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFromApi.swift; sourceTree = "<group>"; };
 		A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
-		A3C34A9024CA230400C7198A /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		A3C34A9224CA271A00C7198A /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A3C34A9424CA274100C7198A /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				A3EAE54324B852D2006B41C7 /* User.swift */,
 				A3C34A9224CA271A00C7198A /* Group.swift */,
 				A3C34A9424CA274100C7198A /* Objects.swift */,
-				A3C34A9024CA230400C7198A /* CustomProgressBar.swift */,
 				A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */,
 				A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */,
 				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
@@ -334,7 +331,6 @@
 				A3C34A9524CA274100C7198A /* Objects.swift in Sources */,
 				A3A1F63E24C8CC0A00BAC778 /* Constants.swift in Sources */,
 				A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */,
-				A3C34A9124CA230400C7198A /* CustomProgressBar.swift in Sources */,
 				A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */,
 				A3EAE54424B852D2006B41C7 /* User.swift in Sources */,
 				C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */,
@@ -495,15 +491,17 @@
 			baseConfigurationReference = EB0339FDA03230FF4FCA8A82 /* Pods-360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSGP9843T;
+				DEVELOPMENT_TEAM = JL2KKDNH2C;
 				INFOPLIST_FILE = 360/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XDev.360;
+				PRODUCT_BUNDLE_IDENTIFIER = Adilzhan.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,15 +512,17 @@
 			baseConfigurationReference = 06B41CF73E506ABCD26E9C17 /* Pods-360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSGP9843T;
+				DEVELOPMENT_TEAM = JL2KKDNH2C;
 				INFOPLIST_FILE = 360/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XDev.360;
+				PRODUCT_BUNDLE_IDENTIFIER = Adilzhan.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
