@@ -9,6 +9,7 @@
 import Foundation
 
 struct Key {
+    static let googleClientID = "822036022626-ebf75f5voekafq8hj20o50egooavbico.apps.googleusercontent.com"
     struct colors {
         static let your = "YourColor"
         static let collegues = "ColleguesColor"
@@ -19,10 +20,11 @@ struct Key {
     }
     struct Identifier {
         static let cell = "cell"
-        static let signIn = "AfterLogin"
+        static let signIn = "tabBarController"
         static let afterQuestions = "segueSurveyView"
     }
     struct defaultsKey {
         static let numberOfQuestion = "questionId"
     }
+    
 }
