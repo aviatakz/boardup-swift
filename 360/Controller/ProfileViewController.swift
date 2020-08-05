@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import Kingfisher
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
@@ -37,17 +38,19 @@ class ProfileViewController: UIViewController {
         let activityIndicator = viewDesign.getActivityIndicator(view: view)
         
         activityIndicator.startAnimating()
-        
-        DataFromApi.getSingleUser(id: 4) { (user) in
+//        print("sdfdgg  \(UserDefaults.standard.integer(forKey: "userID"))")
+        DataFromApi.getSingleUser(id: UserDefaults.standard.integer(forKey: "userID")) { (user) in
             DispatchQueue.main.async{
-                                       self.nameAndsurnameLabel.text = user.username
-                                       self.emailAddressLabel.text = user.email!
-                       //                self.userImage.image = user.photo
-                                       self.departmentLabel.text = user.groups[0].name
+                self.nameAndsurnameLabel.text = user.username
+                self.emailAddressLabel.text = user.email
+                let url = URL(string: user.photo)
+                self.userImage.kf.setImage(with: url)
+                
                 activityIndicator.stopAnimating()
                                     }
             
         }
+        
         
             
         userImage.image = data.getUserImage()

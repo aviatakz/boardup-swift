@@ -15,7 +15,12 @@ struct RadarChart {
     private var collegisOn:Bool = false
     private var companyisOn:Bool = false
     
-    
+//    lazy let Characteristic: [String] = {
+//        var answer = [String]
+//        for i in 1 ..<
+//    
+//        return answer
+//    }()
     
     
     let Characteristic = ["Отзывчивость", "Упорство", "Дисциплинированность", "Ответственность", "Решимость"]

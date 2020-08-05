@@ -50,6 +50,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         }else{
             print("Not signed in did")
         }
+    
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -62,17 +63,27 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
               return
             }
             // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            // ...
-            print("Google user ID: \(userId)! ")
-        print(idToken)
+            let group = DispatchGroup()
+            group.enter()
         
-            print(  fullName ?? 0, givenName ?? 0, familyName ?? 0, email ?? 0, separator: "\n")
+        DispatchQueue.global().async {
+            if let token = user.authentication.accessToken {
+                DataFromApi.requestToken(token: token)
+                group.leave()
+            }
+        }
+        
+        group.wait()
+            
+            
+        
+        
+//        print(token)
+            // ...
+//            print("Google user ID: \(userId)! ")
+//        print("id token: \(idToken!)")
+////
+//            print(  fullName ?? 0, givenName ?? 0, familyName ?? 0, email ?? 0, separator: "\n")
         
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = storyboard.instantiateViewController(identifier: Key.Identifier.signIn)

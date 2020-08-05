@@ -11,10 +11,10 @@ import Foundation
 struct User : Decodable {
     let id: Int
     var username: String
-    var email: String?
-    let isSuperuser: Bool
+    var email: String
+//    let is_superuser: Bool
     var groups: [Group]
-    let photo: String?
+    let photo: String
 //    init(dict: [String: Any]) {
 //        id = dict["id"] as? Int ?? 0
 //        username = dict["username"] as? String ?? ""
@@ -26,6 +26,11 @@ struct User : Decodable {
 //            group.append(Group(dict: dictGroup))
 //        }
 //    }
+}
+
+struct Token: Decodable {
+    let token: String
+    let user: User
 }
 
 
