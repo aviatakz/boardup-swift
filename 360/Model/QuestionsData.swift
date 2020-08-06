@@ -9,45 +9,41 @@
 import Foundation
 import UIKit
 
-struct QuestionsData {
-    lazy var objectsArray: [Objects] = {
-        var answer: [Objects]  = [Objects(sectionNAme: "Оценить",done: false, sectionObject: []),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: [])]
-        let group = DispatchGroup()
-        group.enter()
-        
-        DispatchQueue.global().async {
-            DataFromApi.getInterviewList(id: 15) { (results) in
-                print(results)
-                for user in results{
-                //            if user.isDone{
-                //                answer[0].sectionObject?.append(user.targetUser)
-                //            }else{
-                //                answer[1].sectionObject?.append(user.targetUser)
-                //            }
-                            answer[0].sectionObject?.append(user.targetUser)
-                            
-                        }
-            }
-            group.leave()
-        }
-        
-        group.wait()
-        print(answer)
-        return answer
-    }()
-        
+struct QuestionsData{
+    var objectsArray: [Objects]  = [Objects(sectionNAme: "Оценить",done: false, sectionObject: []),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: [])]
 
-    mutating func getQuestionsDataCount() -> Int {
+    
+//        for user in users{
+////                        if user.isDone{
+////                            self.objectsArray[0].sectionObject?.append(user.targetUser)
+////                        }else{
+////                            self.objectsArray[1].sectionObject?.append(user.targetUser)
+////                        }
+//            self.objectsArray[0].sectionObject?.append(user)
+//        }
+        
+    
+   
+//    mutating func loadUserArray(){
+//        DataFromApi.getInterviewList(id: 15) { (results) in
+//            for user in results{
+//                self.objectsArray[0].sectionObject!.append(user.targetUser)
+//            }
+//        }
+//    }
+    
+
+    func getQuestionsDataCount() -> Int {
         return objectsArray.count
     }
     
     
-    mutating func getQuestionsSectionCount(numberOfRowsInSection section: Int) -> Int {
+    func getQuestionsSectionCount(numberOfRowsInSection section: Int) -> Int {
         return objectsArray[section].sectionObject?.count ?? 0
     }
     
     
-    mutating func getCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PersonTableViewCell{
+    func getCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PersonTableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: Key.Identifier.cell, for: indexPath) as! PersonTableViewCell  // getCell
             
         if objectsArray[indexPath.section].done!{
@@ -61,7 +57,7 @@ struct QuestionsData {
     }
     
     
-    mutating func getView(ViewWidth width: CGFloat,viewForHeaderInSection section: Int) -> UIView {
+    func getView(ViewWidth width: CGFloat,viewForHeaderInSection section: Int) -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
         view.backgroundColor = .systemGray6
         let  lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 60))
@@ -72,18 +68,18 @@ struct QuestionsData {
     }
     
     
-    mutating func getProgress() -> Float{
+    func getProgress() -> Float{
         let answer = Float(getDoneCount()) / Float(getAllTaskCount())
         return answer
     }
     
     
-    mutating func getDoneCount() -> Int {
+    func getDoneCount() -> Int {
         return objectsArray[1].sectionObject!.count
     }
     
     
-    mutating func getAllTaskCount() -> Int {
+    func getAllTaskCount() -> Int {
         var answer = 0
         for i in objectsArray{
             for _ in i.sectionObject!{

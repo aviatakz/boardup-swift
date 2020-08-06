@@ -21,7 +21,6 @@
 		A3A1F63C24C8BBF400BAC778 /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */; };
 		A3A1F63E24C8CC0A00BAC778 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63D24C8CC0A00BAC778 /* Constants.swift */; };
 		A3A1F64124C8CD2100BAC778 /* DataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */; };
-		A3C34A8F24CA15AD00C7198A /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */; };
 		A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */; };
 		A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */; };
 		A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */; };
@@ -51,7 +50,6 @@
 		A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		A3A1F63D24C8CC0A00BAC778 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFromApi.swift; sourceTree = "<group>"; };
-		A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
 		A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				A3EAE54324B852D2006B41C7 /* Structures.swift */,
-				A3C34A8E24CA15AD00C7198A /* QuestionsData.swift */,
 				A3A1F64024C8CD2100BAC778 /* DataFromApi.swift */,
 				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
 				A3A1F63324C8A88600BAC778 /* ProfileData.swift */,
@@ -326,7 +323,6 @@
 				A329C48B24BD825F00EE1057 /* PersonTableViewCell.swift in Sources */,
 				A3A1F64124C8CD2100BAC778 /* DataFromApi.swift in Sources */,
 				A3A1F63C24C8BBF400BAC778 /* RadarChart.swift in Sources */,
-				A3C34A8F24CA15AD00C7198A /* QuestionsData.swift in Sources */,
 				A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */,
 				A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */,
 				A3A1F63624C8AB8C00BAC778 /* ViewDesign.swift in Sources */,
