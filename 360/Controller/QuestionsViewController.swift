@@ -14,21 +14,17 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var progressBar: UIProgressView!
     
     var questionsData = QuestionsData()
-    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        tableView.delegate = self
-//        tableView.dataSource = self
         tableView.allowsSelection = true
         // Do any additional setup after loading the view.
         progressBar.progress = questionsData.getProgress()
-        
     }
     
 }
+
 
 extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
     
@@ -41,17 +37,12 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
         return questionsData.getQuestionsSectionCount(numberOfRowsInSection: section)
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         return questionsData.getCell(tableView, cellForRowAt: indexPath)
     }
     
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let width = tableView.frame.width
-        
         return questionsData.getView(ViewWidth: width, viewForHeaderInSection: section)
     }
     
@@ -60,7 +51,6 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         defaults.set(indexPath.row, forKey: Key.defaultsKey.numberOfQuestion)
         self.performSegue(withIdentifier: Key.Identifier.afterQuestions, sender: self)
     }

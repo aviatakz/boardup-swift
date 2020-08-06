@@ -10,22 +10,44 @@ import Foundation
 import UIKit
 
 struct QuestionsData {
-    var objectsArray: [Objects] = [Objects(sectionNAme: "Оценить",done: false, sectionObject: ["Akhayev Adil","Matilda Brown","Matilda Brown","Matilda Brown"]),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: ["Matilda Brown","Matilda Brown"])]
-    
-    
-//    func getQuestionsData() -> [Objects] {
-//        return objectsArray
-//    }
-    
-    func getQuestionsDataCount() -> Int {
+    lazy var objectsArray: [Objects] = {
+        var answer: [Objects]  = [Objects(sectionNAme: "Оценить",done: false, sectionObject: []),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: [])]
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.global().async {
+            DataFromApi.getInterviewList(id: 15) { (results) in
+                print(results)
+                for user in results{
+                //            if user.isDone{
+                //                answer[0].sectionObject?.append(user.targetUser)
+                //            }else{
+                //                answer[1].sectionObject?.append(user.targetUser)
+                //            }
+                            answer[0].sectionObject?.append(user.targetUser)
+                            
+                        }
+            }
+            group.leave()
+        }
+        
+        group.wait()
+        print(answer)
+        return answer
+    }()
+        
+
+    mutating func getQuestionsDataCount() -> Int {
         return objectsArray.count
     }
     
-    func getQuestionsSectionCount(numberOfRowsInSection section: Int) -> Int {
+    
+    mutating func getQuestionsSectionCount(numberOfRowsInSection section: Int) -> Int {
         return objectsArray[section].sectionObject?.count ?? 0
     }
     
-    func getCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PersonTableViewCell{
+    
+    mutating func getCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PersonTableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: Key.Identifier.cell, for: indexPath) as! PersonTableViewCell  // getCell
             
         if objectsArray[indexPath.section].done!{
@@ -34,17 +56,14 @@ struct QuestionsData {
             cell.doneColorView.backgroundColor = .systemGreen
         }
     
-        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row]
-        
-        
+        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].username
         return cell
-}
+    }
     
-    func getView(ViewWidth width: CGFloat,viewForHeaderInSection section: Int) -> UIView {
+    
+    mutating func getView(ViewWidth width: CGFloat,viewForHeaderInSection section: Int) -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
-        
         view.backgroundColor = .systemGray6
-        
         let  lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 60))
         lbl.text = objectsArray[section].sectionNAme
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
@@ -52,14 +71,19 @@ struct QuestionsData {
         return view
     }
     
-    func getProgress() -> Float{
+    
+    mutating func getProgress() -> Float{
         let answer = Float(getDoneCount()) / Float(getAllTaskCount())
         return answer
     }
-    func getDoneCount() -> Int {
+    
+    
+    mutating func getDoneCount() -> Int {
         return objectsArray[1].sectionObject!.count
     }
-    func getAllTaskCount() -> Int {
+    
+    
+    mutating func getAllTaskCount() -> Int {
         var answer = 0
         for i in objectsArray{
             for _ in i.sectionObject!{
@@ -68,7 +92,4 @@ struct QuestionsData {
         }
         return answer
     }
-
-
-
 }

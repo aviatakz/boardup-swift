@@ -21,64 +21,37 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var boxView: UIView!
     @IBOutlet weak var boxView2: UIView!
     
-    
-
-    
-   
-    
     let data = ProfileData()
     let viewDesign = ViewDesign()
     
-
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         let activityIndicator = viewDesign.getActivityIndicator(view: view)
-        
         activityIndicator.startAnimating()
-//        print("sdfdgg  \(UserDefaults.standard.integer(forKey: "userID"))")
         DataFromApi.getSingleUser(id: UserDefaults.standard.integer(forKey: "userID")) { (user) in
             DispatchQueue.main.async{
                 self.nameAndsurnameLabel.text = user.username
                 self.emailAddressLabel.text = user.email
                 let url = URL(string: user.photo!)
                 self.userImage.kf.setImage(with: url)
-                
                 activityIndicator.stopAnimating()
                                     }
-            
         }
-        DataFromApi.getInterviewList(id: 15)
-        
-        
-            
+      
         userImage.image = data.getUserImage()
-        
-        
         viewDesign.userImageDesign(userImage)
         viewDesign.boxViewDesign(boxView)
         viewDesign.boxViewDesign(boxView2)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
         self.navigationItem.title = "360"
-    
-        
-
-        
-        
-       
-        
     }
-    
-    
+      
     
     @objc func handleSignOutButtonTapped() {
         let alert = UIAlertController(title: "Alert", message: "Are you Sure You want to Logout", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             GIDSignIn.sharedInstance().signOut()
-//            self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
     
         }))
@@ -86,8 +59,4 @@ class ProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-    
-    
-    
-
 }
