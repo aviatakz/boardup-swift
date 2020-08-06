@@ -23,9 +23,23 @@ struct DataFromApi {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let user = try? decoder.decode(User.self, from: data) else { return }
-                print(user)
+//                print(user)
                 
                 completion(user)
+                
+            }
+        }
+    }
+    static func getInterviewList(id: Int) -> (){
+        guard let url = URL(string: "http://46.101.246.71:8000/interviews/?user=\(id)") else { return }
+        
+        rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
+            if let data = results.data {
+                print(data)
+                
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let user = try? decoder.decode(User.self, from: data) else { return }
                 
             }
         }

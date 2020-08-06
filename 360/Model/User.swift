@@ -13,8 +13,8 @@ struct User : Decodable {
     var username: String
     var email: String
 //    let is_superuser: Bool
-    var groups: [Group]
-    let photo: String
+    var groups: [Group]?
+    let photo: String?
 //    init(dict: [String: Any]) {
 //        id = dict["id"] as? Int ?? 0
 //        username = dict["username"] as? String ?? ""

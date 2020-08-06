@@ -95,6 +95,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             
             
         }
+    
+    
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
             // Perform any operations when the user disconnects from app here.
             print("User has disconnected")

@@ -43,13 +43,14 @@ class ProfileViewController: UIViewController {
             DispatchQueue.main.async{
                 self.nameAndsurnameLabel.text = user.username
                 self.emailAddressLabel.text = user.email
-                let url = URL(string: user.photo)
+                let url = URL(string: user.photo!)
                 self.userImage.kf.setImage(with: url)
                 
                 activityIndicator.stopAnimating()
                                     }
             
         }
+        DataFromApi.getInterviewList(id: 15)
         
         
             
