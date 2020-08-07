@@ -16,7 +16,7 @@ struct RadarChart {
     private var companyisOn:Bool = false
     
     
-    let Characteristic = ["Отзывчивость", "Упорство", "Дисциплинированность", "Ответственность", "Решимость"]
+    let Characteristic = ["Инициативность", "Смелость", "Готов(а) прийти на помощь.", "Доброжелателен(а).", "Профессионал в своей области.","Не боится высказывать свое мнение.","Восприимчив к нововведениям, не боится изменений.","В затруднительных ситуациях не унывает, а ищет решение.","Занимается саморазвитием.","Соблюдает принятые в компании правила.","Идеально подходит для этой позиции.","Ему (ей) важны чувства коллег.","Автономен/автономна в работе, не нуждается в контроле."]
     
     func generalRadarChart() -> RadarChartView {
         let chartView = RadarChartView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
@@ -31,7 +31,7 @@ struct RadarChart {
             
             // xAxis
             let xAxis = chartView.xAxis
-            xAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(6.0))!
+            xAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(2.0))!
             xAxis.xOffset = 0.0
             xAxis.yOffset = 0.0
             xAxis.labelTextColor = NSUIColor.black
@@ -74,13 +74,13 @@ struct RadarChart {
     
     
     func getEntries(number:Int) -> [RadarChartDataEntry] {
-        let entries1 = [RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50)]
+        let entries1 = [RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50)]
         
-        let entries2 = [RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 40)]
+        let entries2 = [RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 40)]
         
-        let entries3 = [RadarChartDataEntry(value: 10),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 50)]
+        let entries3 = [RadarChartDataEntry(value: 10),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 10),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 50)]
         
-        let entries4 = [RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0)]
+        let entries4 = [RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0)]
         
         
         

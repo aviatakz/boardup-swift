@@ -26,7 +26,7 @@ class QuestionsViewController: UIViewController {
     }
     
     func loadData() {
-        DataFromApi.getInterviewList(id: 15) { (results) in
+        DataFromApi.getInterviewList(id: UserDefaults.standard.integer(forKey: "userID")) { (results) in
             for user in results{
 //                if user.isDone{
 //                    self.objectsArray[1].sectionObject!.append(user.targetUser)

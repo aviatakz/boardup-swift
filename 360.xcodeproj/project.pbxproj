@@ -25,7 +25,6 @@
 		A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */; };
 		A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */; };
 		A3EAE54424B852D2006B41C7 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE54324B852D2006B41C7 /* Structures.swift */; };
-		A3EAE54624B8543C006B41C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EAE54524B8543C006B41C7 /* data.json */; };
 		C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50443C024C454E4003CA29C /* SurveyViewController.swift */; };
 		C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */; };
 		C520685C24CD990A0029D1E4 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520685B24CD990A0029D1E4 /* Interview.swift */; };
@@ -54,7 +53,6 @@
 		A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3EAE54324B852D2006B41C7 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
-		A3EAE54524B8543C006B41C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C50443C024C454E4003CA29C /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		C520685B24CD990A0029D1E4 /* Interview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				C5888BF624BF231A0074F805 /* Controller */,
 				A353DD6E24B6F270001AE486 /* AppDelegate.swift */,
 				A353DD7024B6F270001AE486 /* SceneDelegate.swift */,
-				A3EAE54524B8543C006B41C7 /* data.json */,
 				A353DD8224B6F3C1001AE486 /* Model */,
 				A353DD8324B6F402001AE486 /* View */,
 				C51D690624CA70A4006E3502 /* fonts */,
@@ -243,7 +240,6 @@
 				A353DD7B24B6F272001AE486 /* LaunchScreen.storyboard in Resources */,
 				A353DD7824B6F272001AE486 /* Assets.xcassets in Resources */,
 				A353DD7624B6F270001AE486 /* Main.storyboard in Resources */,
-				A3EAE54624B8543C006B41C7 /* data.json in Resources */,
 				C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
