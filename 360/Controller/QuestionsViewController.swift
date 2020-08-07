@@ -33,7 +33,7 @@ class QuestionsViewController: UIViewController {
 //                }else{
 //                    self.objectsArray[0].sectionObject!.append(user.targetUser)
 //                }
-                self.objectsArray[0].sectionObject!.append(user.targetUser)
+                self.objectsArray[0].sectionObject!.append(user)
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -64,12 +64,12 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
         }else{
             cell.doneColorView.backgroundColor = .systemGreen
         }
-        if let stringUrl = objectsArray[indexPath.section].sectionObject?[indexPath.row].photo{
+        if let stringUrl = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.photo{
             let url = URL(string: stringUrl)
             cell.personeImg.kf.setImage(with: url)
         }
-        cell.personeInfoLabel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].groups[0].name
-        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].username
+        cell.personeInfoLabel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.groups[0].name
+        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.username
         return cell
     }
     
@@ -89,6 +89,11 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let users = objectsArray[0].sectionObject{
+            let user = users[indexPath.row]
+            print(user.surveyId)
+            print(user.id)
+        }
         defaults.set(indexPath.row, forKey: Key.defaultsKey.numberOfQuestion)
         self.performSegue(withIdentifier: Key.Identifier.afterQuestions, sender: self)
     }
@@ -101,7 +106,6 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
        
 
     func getDoneCount() -> Int {
-        print(objectsArray[1].sectionObject!.count)
        return objectsArray[1].sectionObject!.count
     }
 

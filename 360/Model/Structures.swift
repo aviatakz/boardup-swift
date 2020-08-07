@@ -46,7 +46,7 @@ struct Token: Decodable {
 struct Objects {
     var sectionNAme: String?
     var done: Bool?
-    var sectionObject: [User]?
+    var sectionObject: [InterviewList]?
 }
 
 
