@@ -9,9 +9,6 @@
 import UIKit
 
 class SurveyViewController: UIViewController, UIScrollViewDelegate {
-    var surveyId: Int = 33
-    var interviewId: Int = 4
-    
 
     @IBOutlet var mainView: UIView!
     
@@ -22,6 +19,10 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     var questionsList = [Question]()
     
     var sliders = [UISlider]()
+    
+    var surveyId: Int = 30
+    
+    var interviewId: Int = 33
     
     let pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 500, height: 40))
     
@@ -34,6 +35,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     
     var customFont : UIFont = UIFont(name: "Montserrat", size: 17)!
     
+    var commentField = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +51,19 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
         }
         
         group.notify(queue: .main) {
-            
+            print("interview id: \(self.interviewId)")
+            print("survey id: \(self.surveyId)")
             self.scrollView.delegate = self
             
             self.labelCurrentPage.frame.origin.x = self.view.frame.midX + 110
             self.labelCurrentPage.frame.origin.y = (self.view.frame.midY / 2) - 80
             self.labelCurrentPage.textAlignment = .center
-            self.labelCurrentPage.text = "1/\(self.questionCount)"
+            self.labelCurrentPage.text = "1/\(self.questionCount + 1)"
             self.labelCurrentPage.font = self.customFont
             
             self.pageControl.frame.origin.x = self.view.frame.midX - 250
             self.pageControl.frame.origin.y = self.view.frame.midY
-            self.pageControl.numberOfPages = self.questionCount
+            self.pageControl.numberOfPages = self.questionCount + 1
             self.pageControl.currentPageIndicatorTintColor = .black
             self.pageControl.pageIndicatorTintColor = .lightGray
             
@@ -100,14 +103,21 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
                 labelMin.font = self.customFont
                 labelMax.font = self.customFont
                 
+                let dontKnowButton = UIButton(frame: CGRect(x: xCoordinate - 50, y: self.view.frame.midY * 1.4, width: 100, height: 50))
+                dontKnowButton.setTitle("Не знаю", for: .normal)
+                dontKnowButton.backgroundColor = .lightGray
+                dontKnowButton.setTitleColor(self.lightGreen, for: .selected)
+//                dontKnowButton.addTarget(self, action: #selector(self.dontKnow(sender:id:), for: .touchUpInside)
+                
                 self.scrollView.addSubview(labelMax)
                 self.scrollView.addSubview(labelMin)
                 self.scrollView.addSubview(slider)
                 self.scrollView.addSubview(questionView)
                 self.scrollView.addSubview(labelToDisplay)
+                self.scrollView.addSubview(dontKnowButton)
                 self.contentWidth += self.view.frame.width
             }
-            
+            self.contentWidth += self.view.frame.width
             let sendButton = UIButton(type: .system)
             sendButton.frame = CGRect(x: self.contentWidth - self.view.frame.midX - 50, y: self.view.frame.midY * 1.4, width: 100, height: 50)
             sendButton.setTitle("Отправить", for: .normal)
@@ -115,6 +125,12 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
             sendButton.backgroundColor = self.lightGreen
             sendButton.addTarget(self, action: #selector(self.sendAllGrades(sender:)), for: .touchUpInside)
             
+            self.commentField = UITextField(frame: CGRect(x: self.contentWidth - self.view.frame.midX - 150, y: self.view.frame.midY / 2 - 105, width: 300, height: 210))
+            self.commentField.font = self.customFont
+            self.commentField.placeholder = "Введите комментарий"
+            self.commentField.borderStyle = UITextField.BorderStyle.roundedRect
+            
+            self.scrollView.addSubview(self.commentField)
             self.scrollView.addSubview(sendButton)
             
             self.scrollView.contentSize = CGSize(width: self.contentWidth, height: 1.0)
@@ -125,14 +141,20 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)
-        labelCurrentPage.text = "\(Int(pageNumber) + 1)/\(self.questionCount)"
+        labelCurrentPage.text = "\(Int(pageNumber) + 1)/\(self.questionCount + 1)"
     }
     
     @objc func sendAllGrades(sender: UIButton!) {
         for i in 0...(self.questionsList.count - 1) {
             let grade = Grade(id: 1, value: Int(self.sliders[i].value), questionId: self.questionsList[i].id, interviewId: self.interviewId)
+            print(grade)
             DataFromApi.createGrades(grade: grade)
         }
+//        DataFromApi.createComment(comment: self.commentField.value, interviewId: self.interviewId)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func dontKnow(sender: UIButton!, id: Int) {
+        self.sliders[id].value = 0
     }
 }

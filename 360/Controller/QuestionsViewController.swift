@@ -97,7 +97,7 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let secondViewController = storyboard.instantiateViewController(identifier: "SurveyViewController") as? SurveyViewController else { return }
             secondViewController.interviewId = user.id
-            secondViewController.interviewId = user.surveyId
+            secondViewController.surveyId = user.surveyId
             
             show(secondViewController, sender: nil)
             
