@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 struct ProfileData {
-    
-    //let data = parse(pathForFile: Bundle.main.path(forResource: "data", ofType: "json")!)
-    
-    
+
     func getUserImage() -> UIImage?{
         return UIImage(named: "person")
     }

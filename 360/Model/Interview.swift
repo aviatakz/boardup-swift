@@ -37,7 +37,7 @@ struct Grade : Decodable {
     var interviewId: Int
 }
 
-struct Categories: Decodable {
+struct Categories : Decodable {
     let id: Int
     let name: String
 }
