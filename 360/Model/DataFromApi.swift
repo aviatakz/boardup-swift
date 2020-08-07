@@ -62,7 +62,7 @@ struct DataFromApi {
     }
     
     
-    static func getSurveyList(id:Int,completion: @escaping (User) -> ())  {
+    static func getSurveyList(id:Int,completion: @escaping (Survey) -> ())  {
             guard let url = URL(string: "http://46.101.246.71:8000/surveys/\(id)") else { return }
             rest.urlQueryParameters.add(value: "json", forKey: "format")
             rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
