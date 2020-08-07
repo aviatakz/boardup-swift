@@ -19,6 +19,9 @@ struct Interview : Decodable {
 struct Survey : Decodable {
     let id: Int
     let name: String
+    let startDate: String
+    let endDate: String
+    let isActive: Bool
     let questions: [Question]
 }
 
@@ -27,7 +30,8 @@ struct Question : Decodable {
     let description: String
     let categoryId: Int
     let surveyId: Int
-    let createdAt: Date
+    let createdAt: String
+    let order: Int
 }
 
 struct Grade : Decodable {
@@ -39,5 +43,15 @@ struct Grade : Decodable {
 
 struct Categories : Decodable {
     let id: Int
+    let name: String
+}
+
+struct GradePOST: Decodable {
+    let value: Int
+    let questionId: Int
+    let interviewId: Int
+}
+
+struct GroupPOST: Decodable {
     let name: String
 }
