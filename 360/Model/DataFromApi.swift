@@ -13,13 +13,21 @@ struct DataFromApi {
     
     static func getSingleUser(id:Int,completion: @escaping (User) -> ())  {
         guard let url = URL(string: "http://46.101.246.71:8000/users/\(id)") else { return }
+        print(url)
         rest.urlQueryParameters.add(value: "json", forKey: "format")
         rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
             if let data = results.data {
+                let str = String(decoding: data, as: UTF8.self)
+                print(str)
+                
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let user = try? decoder.decode(User.self, from: data) else { return }
-                completion(user)
+                do{
+                    let user = try decoder.decode(User.self, from: data)
+                    completion(user)
+                }catch{
+                    print(error)
+                }
                 
             }
         }
@@ -57,12 +65,13 @@ struct DataFromApi {
                 let decoder = JSONDecoder()
                 guard let tokenUser = try? decoder.decode(Token.self, from: data) else { return }
                 let defaults = UserDefaults.standard
+                let JWT = tokenUser.token
                 defaults.set(tokenUser.user.id, forKey: "userID")
            }
     }
     
     
-    static func getSurveyList(id:Int,completion: @escaping (User) -> ())  {
+    static func getSurveyList(id:Int,completion: @escaping (Survey) -> ())  {
             guard let url = URL(string: "http://46.101.246.71:8000/surveys/\(id)") else { return }
             rest.urlQueryParameters.add(value: "json", forKey: "format")
             rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in

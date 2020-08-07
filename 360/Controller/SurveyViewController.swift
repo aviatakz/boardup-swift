@@ -9,6 +9,9 @@
 import UIKit
 
 class SurveyViewController: UIViewController, UIScrollViewDelegate {
+    var surveyId: Int = 33
+    var interviewId: Int = 4
+    
 
     @IBOutlet var mainView: UIView!
     
@@ -34,11 +37,10 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         let group = DispatchGroup()
         group.enter()
         
-        DataFromApi.getSurveyList(id: 33) { (survey) in
+        DataFromApi.getSurveyList(id: surveyId) { (survey) in
             DispatchQueue.main.sync {
                 self.questionCount = survey.questions.count
                 self.questionsList = survey.questions
@@ -128,8 +130,9 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func sendAllGrades(sender: UIButton!) {
         for i in 0...(self.questionsList.count - 1) {
-            let grade = Grade(id: 1, value: Int(self.sliders[i].value), questionId: self.questionsList[i].id, interviewId: 4)
+            let grade = Grade(id: 1, value: Int(self.sliders[i].value), questionId: self.questionsList[i].id, interviewId: self.interviewId)
             DataFromApi.createGrades(grade: grade)
         }
+        self.navigationController?.popViewController(animated: true)
     }
 }

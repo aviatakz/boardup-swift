@@ -93,10 +93,18 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
             let user = users[indexPath.row]
             print(user.surveyId)
             print(user.id)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let secondViewController = storyboard.instantiateViewController(identifier: "SurveyViewController") as? SurveyViewController else { return }
+            secondViewController.interviewId = user.id
+            secondViewController.interviewId = user.surveyId
+            
+            show(secondViewController, sender: nil)
+            
+            
         }
-        defaults.set(indexPath.row, forKey: Key.defaultsKey.numberOfQuestion)
-        self.performSegue(withIdentifier: Key.Identifier.afterQuestions, sender: self)
     }
+    
     
     
     func getProgress() -> Float{
