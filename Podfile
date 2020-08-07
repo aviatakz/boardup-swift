@@ -12,4 +12,7 @@ target '360' do
 
 	#pod for Gsin
 	pod "GoogleSignIn"
+  
+  #pod for downloading images
+  pod "Kingfisher"
 end

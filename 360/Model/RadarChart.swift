@@ -16,8 +16,6 @@ struct RadarChart {
     private var companyisOn:Bool = false
     
     
-    
-    
     let Characteristic = ["Отзывчивость", "Упорство", "Дисциплинированность", "Ответственность", "Решимость"]
     
     func generalRadarChart() -> RadarChartView {
@@ -59,6 +57,7 @@ struct RadarChart {
             return chartView
     }
     
+    
     func creatSet(entries: [RadarChartDataEntry],color: UIColor) -> RadarChartDataSet {
         let set = RadarChartDataSet(entries: entries)
         set.colors = [color]
@@ -72,6 +71,8 @@ struct RadarChart {
         return set
         
     }
+    
+    
     func getEntries(number:Int) -> [RadarChartDataEntry] {
         let entries1 = [RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50)]
         
@@ -112,6 +113,7 @@ struct RadarChart {
         return sets
     }
     
+    
     func getRadarChartData(withThese sets: [RadarChartDataSet]) -> RadarChartData {
         
             let data = RadarChartData(dataSets: sets)
@@ -120,7 +122,6 @@ struct RadarChart {
             data.setDrawValues ( false )
             data.setValueTextColor(  NSUIColor.black)
             data.setValueTextColor(.brown)
-            
         
             return data
             
@@ -145,6 +146,5 @@ struct RadarChart {
         if key == 2{
             self.companyisOn = self.companyisOn ? false:true
         }
-        
     }
 }

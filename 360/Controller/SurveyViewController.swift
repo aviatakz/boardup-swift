@@ -119,6 +119,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)

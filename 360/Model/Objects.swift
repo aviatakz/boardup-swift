@@ -11,6 +11,8 @@ import Foundation
 struct Objects {
     var sectionNAme: String?
     var done: Bool?
-    var sectionObject: [String]?
+    var sectionObject: [User]?
+    
 
 }
+
