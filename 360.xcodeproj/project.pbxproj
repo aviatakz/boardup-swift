@@ -27,7 +27,6 @@
 		A3EAE54424B852D2006B41C7 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE54324B852D2006B41C7 /* Structures.swift */; };
 		C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50443C024C454E4003CA29C /* SurveyViewController.swift */; };
 		C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */; };
-		C520685C24CD990A0029D1E4 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520685B24CD990A0029D1E4 /* Interview.swift */; };
 		C5739CE224CEC6E9004FB761 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739CE124CEC6E9004FB761 /* RestManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		A3EAE54324B852D2006B41C7 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		C50443C024C454E4003CA29C /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		C520685B24CD990A0029D1E4 /* Interview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
 		C5739CE124CEC6E9004FB761 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 		EB0339FDA03230FF4FCA8A82 /* Pods-360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-360.debug.xcconfig"; path = "Target Support Files/Pods-360/Pods-360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +119,6 @@
 				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
 				A3A1F63324C8A88600BAC778 /* ProfileData.swift */,
 				A3A1F63524C8AB8C00BAC778 /* ViewDesign.swift */,
-				C520685B24CD990A0029D1E4 /* Interview.swift */,
 				C5739CE124CEC6E9004FB761 /* RestManager.swift */,
 			);
 			path = Model;
@@ -323,7 +320,6 @@
 				A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */,
 				A3A1F63624C8AB8C00BAC778 /* ViewDesign.swift in Sources */,
 				A353DD7124B6F270001AE486 /* SceneDelegate.swift in Sources */,
-				C520685C24CD990A0029D1E4 /* Interview.swift in Sources */,
 				C5739CE224CEC6E9004FB761 /* RestManager.swift in Sources */,
 				A3A1F63A24C8B52D00BAC778 /* RadarChartXValueFormatter.swift in Sources */,
 				A3A1F63424C8A88600BAC778 /* ProfileData.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import RxSwift
 
 class LoginViewController: UIViewController, GIDSignInDelegate {
     override func viewDidLoad() {
@@ -18,10 +19,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
     
-    @IBAction func testButton(_ sender: UIButton) {
-        signIn()
-    }
-    
     
     func signIn() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -29,16 +26,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         secondVC.modalPresentationStyle = .fullScreen
         secondVC.modalTransitionStyle = .crossDissolve
         present(secondVC, animated: true, completion: nil)
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if GIDSignIn.sharedInstance()?.currentUser != nil{
-            signIn()
-        }else{
-            print("Not signed in did")
-        }
     }
     
     
@@ -52,22 +39,12 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
               return
             }
             // Perform any operations on signed in user here.
-            let group = DispatchGroup()
-            group.enter()
-        DispatchQueue.global().async {
-            if let token = user.authentication.accessToken {
-                DataFromApi.requestToken(token: token)
-                group.leave()
+            DispatchQueue.main.async {
+                if let token = user.authentication.accessToken {
+                    DataFromApi.requestToken(token: token)
+                    self.signIn()
+                }
             }
-        }
-        
-        group.wait()
-        
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondVC = storyboard.instantiateViewController(identifier: Key.Identifier.signIn)
-            secondVC.modalPresentationStyle = .fullScreen
-            secondVC.modalTransitionStyle = .crossDissolve
-            present(secondVC, animated: true, completion: nil)
         }
     
     

@@ -10,96 +10,57 @@ import UIKit
 import Charts
 
 struct RadarChart {
-    
+    let chartView = RadarChartView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
     private var yourisOn:Bool = false
     private var collegisOn:Bool = false
     private var companyisOn:Bool = false
+    private var Characteristic: [String] = []
+    private var entrySelf: [RadarChartDataEntry] = []
+    private var entryColleagues: [RadarChartDataEntry] = []
+    private var entryCompany: [RadarChartDataEntry] = []
     
-    
-    let Characteristic = ["Инициативность", "Смелость", "Готов(а) прийти на помощь.", "Доброжелателен(а).", "Профессионал в своей области.","Не боится высказывать свое мнение.","Восприимчив к нововведениям, не боится изменений.","В затруднительных ситуациях не унывает, а ищет решение.","Занимается саморазвитием.","Соблюдает принятые в компании правила.","Идеально подходит для этой позиции.","Ему (ей) важны чувства коллег.","Автономен/автономна в работе, не нуждается в контроле."]
-    
-    func generalRadarChart() -> RadarChartView {
-        let chartView = RadarChartView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
-            
-            // General
-            chartView.backgroundColor = .white
-            chartView.webLineWidth = 1.0
-            chartView.innerWebLineWidth = 1.0
-            chartView.webColor = NSUIColor.lightGray
-            chartView.innerWebColor = NSUIColor.lightGray
-            chartView.webAlpha = 1.0
-            
-            // xAxis
-            let xAxis = chartView.xAxis
-            xAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(2.0))!
-            xAxis.xOffset = 0.0
-            xAxis.yOffset = 0.0
-            xAxis.labelTextColor = NSUIColor.black
-            xAxis.valueFormatter = RadarChartXValueFormatter(withLabels: Characteristic)
-        
-            
-            
-            // yAxis
-            let yAxis = chartView.yAxis
-            yAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(9.0))!
-            yAxis.labelCount = 5
-            yAxis.axisMinimum = 0.0
-            yAxis.axisMaximum = 80.0
-            yAxis.drawLabelsEnabled = false
-        
-            // Legend
-            let legend = chartView.legend
-            legend.enabled = false
-        
-            // animated
-            chartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
-        
-            return chartView
+    mutating func setData(Category: [Categories],entryS: [ResultAVG],entryCol: [ResultAVG],entryCom: [ResultAVG]) {
+        for i in 0..<Category.count{
+            self.Characteristic.append(Category[i].name)
+        }
+        for i in 0..<entryS.count{
+                    self.entrySelf.append(RadarChartDataEntry(value:Double(entryS[i].avg)))
+                }
+        for i in 0..<entryCol.count{
+                    self.entryColleagues.append(RadarChartDataEntry(value:Double(entryCol[i].avg)))
+                }
+        for i in 0..<entryCom.count{
+                    self.entryCompany.append(RadarChartDataEntry(value:Double(entryCom[i].avg)))
+                }
     }
     
-    
-    func creatSet(entries: [RadarChartDataEntry],color: UIColor) -> RadarChartDataSet {
-        let set = RadarChartDataSet(entries: entries)
-        set.colors = [color]
-        set.fillColor = color
-        set.drawFilledEnabled = true
-        set.fillAlpha = 0.5
-        set.lineWidth = 2.0
-        set.drawHighlightCircleEnabled = true
-        set.setDrawHighlightIndicators(false)
-        
-        return set
-        
-    }
-    
-    
-    func getEntries(number:Int) -> [RadarChartDataEntry] {
-        let entries1 = [RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 50)]
-        
-        let entries2 = [RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 40)]
-        
-        let entries3 = [RadarChartDataEntry(value: 10),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 80),RadarChartDataEntry(value: 70),RadarChartDataEntry(value: 60),RadarChartDataEntry(value: 50),RadarChartDataEntry(value: 10),RadarChartDataEntry(value: 20),RadarChartDataEntry(value: 30),RadarChartDataEntry(value: 40),RadarChartDataEntry(value: 50)]
-        
-        let entries4 = [RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0),RadarChartDataEntry(value: 0)]
-        
-        
-        
-        let answer = [entries1,entries2,entries3,entries4]
-        
-        
-        return answer[number]
-    }
-    
-    
+
     func creatSets() -> [RadarChartDataSet] {
-        
         var sets: [RadarChartDataSet] = []
-        
-        let set1 = creatSet(entries: getEntries(number: 0), color: UIColor(named: Key.colors.your)!)
-        let set2 = creatSet(entries: getEntries(number: 1), color: UIColor(named: Key.colors.collegues)!)
-        let set3 = creatSet(entries: getEntries(number: 2), color: UIColor(named: Key.colors.company)!)
-        let set4 = creatSet(entries: getEntries(number: 3), color: .clear)
-        sets.append(set4)
+        let set1 = RadarChartDataSet(entries: entrySelf)
+        set1.colors = [UIColor(named: Key.colors.your)!]
+        set1.fillColor = UIColor(named: Key.colors.your)!
+        set1.drawFilledEnabled = true
+        set1.fillAlpha = 0.5
+        set1.lineWidth = 2.0
+        set1.drawHighlightCircleEnabled = true
+        set1.setDrawHighlightIndicators(false)
+        let set2 = RadarChartDataSet(entries: entryColleagues)
+        set2.colors = [UIColor(named: Key.colors.collegues)!]
+        set2.fillColor = UIColor(named: Key.colors.collegues)!
+        set2.drawFilledEnabled = true
+        set2.fillAlpha = 0.5
+        set2.lineWidth = 2.0
+        set2.drawHighlightCircleEnabled = true
+        set2.setDrawHighlightIndicators(false)
+        let set3 = RadarChartDataSet(entries: entryCompany)
+        set3.colors = [UIColor(named: Key.colors.company)!]
+        set3.fillColor = UIColor(named: Key.colors.company)!
+        set3.drawFilledEnabled = true
+        set3.fillAlpha = 0.5
+        set3.lineWidth = 2.0
+        set3.drawHighlightCircleEnabled = true
+        set3.setDrawHighlightIndicators(false)
         if yourisOn{
             sets.append(set1)
         }
@@ -109,30 +70,49 @@ struct RadarChart {
         if companyisOn{
             sets.append(set3)
         }
-        
         return sets
     }
     
     
     func getRadarChartData(withThese sets: [RadarChartDataSet]) -> RadarChartData {
-        
             let data = RadarChartData(dataSets: sets)
-        
             data.setValueFont ( NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(8.0))!)
             data.setDrawValues ( false )
             data.setValueTextColor(  NSUIColor.black)
             data.setValueTextColor(.brown)
-        
             return data
-            
     }
     
     
     func createChartView() -> RadarChartView {
-        let chartView = generalRadarChart()
-        chartView.data = getRadarChartData(withThese: creatSets())
-        
-        return chartView
+            // General
+            chartView.backgroundColor = .white
+            chartView.webLineWidth = 1.0
+            chartView.innerWebLineWidth = 1.0
+            chartView.webColor = NSUIColor.lightGray
+            chartView.innerWebColor = NSUIColor.lightGray
+            chartView.webAlpha = 1.0
+            // xAxis
+            let xAxis = chartView.xAxis
+            xAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(2.0))!
+            xAxis.xOffset = 0.0
+            xAxis.yOffset = 0.0
+            xAxis.labelTextColor = NSUIColor.black
+            xAxis.valueFormatter = RadarChartXValueFormatter(withLabels: Characteristic)
+            // yAxis
+            let yAxis = chartView.yAxis
+            yAxis.labelFont = NSUIFont(name: Key.textStyle.fontStyle, size: CGFloat(9.0))!
+            yAxis.labelCount = 5
+            yAxis.axisMinimum = 0.0
+            yAxis.axisMaximum = 8.0
+            yAxis.drawLabelsEnabled = false
+            // Legend
+            let legend = chartView.legend
+            legend.enabled = false
+            // animated
+            chartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
+            chartView.data = getRadarChartData(withThese: creatSets())
+            return chartView
     }
     
     

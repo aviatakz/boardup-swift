@@ -22,11 +22,13 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - Charts
   - GoogleSignIn
   - Kingfisher
+  - RxSwift
 
 SPEC REPOS:
   trunk:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - Kingfisher
+    - RxSwift
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -44,7 +47,8 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 8068604d0963952589644c7b5270433914f1cd62
+PODFILE CHECKSUM: 7901d4deb433961e59a8017f4a6203c755d6cd26
 
 COCOAPODS: 1.9.3

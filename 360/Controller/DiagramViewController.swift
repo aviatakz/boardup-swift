@@ -10,16 +10,19 @@ import UIKit
 import Charts
 
 class DiagramViewController: UIViewController {
-    
     @IBOutlet weak var diagramView: UIView!
     @IBOutlet weak var numberOfEvalutedLabel: UILabel!
     @IBOutlet weak var dateEvalutedLabel: UILabel!
-    
     var radarChart = RadarChart()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateChartView()
+        DataFromApi.getInterviewsResults(user_id: 16, survey_id: 41) { (results) in
+            DispatchQueue.main.async{
+            self.radarChart.setData(Category: results.categories, entryS: results.`self`, entryCol: results.colleagues, entryCom: results.company)
+                self.updateChartView()
+            }
+        }
     }
     
     

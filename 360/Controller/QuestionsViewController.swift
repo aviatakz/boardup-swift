@@ -28,12 +28,11 @@ class QuestionsViewController: UIViewController {
     func loadData() {
         DataFromApi.getInterviewList(id: UserDefaults.standard.integer(forKey: "userID")) { (results) in
             for user in results{
-//                if user.isDone{
-//                    self.objectsArray[1].sectionObject!.append(user.targetUser)
-//                }else{
-//                    self.objectsArray[0].sectionObject!.append(user.targetUser)
-//                }
-                self.objectsArray[0].sectionObject!.append(user)
+                if user.isDone{
+                    self.objectsArray[1].sectionObject!.append(user)
+                }else{
+                    self.objectsArray[0].sectionObject!.append(user)
+                }
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -68,7 +67,6 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
             let url = URL(string: stringUrl)
             cell.personeImg.kf.setImage(with: url)
         }
-        cell.personeInfoLabel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.groups[0].name
         cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.username
         return cell
     }

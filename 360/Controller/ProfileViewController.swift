@@ -45,6 +45,7 @@ class ProfileViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
         self.navigationItem.title = "360"
+        
     }
       
     

@@ -7,19 +7,14 @@
 //
 
 import Foundation
-
+import RxSwift
 struct DataFromApi {
     static let rest = RestManager()
-    
     static func getSingleUser(id:Int,completion: @escaping (User) -> ())  {
         guard let url = URL(string: "http://46.101.246.71:8000/users/\(id)") else { return }
-        print(url)
         rest.urlQueryParameters.add(value: "json", forKey: "format")
         rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
             if let data = results.data {
-                let str = String(decoding: data, as: UTF8.self)
-                print(str)
-                
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do{
@@ -28,28 +23,35 @@ struct DataFromApi {
                 }catch{
                     print(error)
                 }
-                
             }
         }
     }
     
     
+    
+    static func getInterviewsResults (user_id:Int,survey_id: Int,completion: @escaping (Results) -> ()) {
+        guard let url = URL(string: "http://46.101.246.71:8000/interviews/results/") else { return }
+        rest.urlQueryParameters.add(value: "\(user_id)", forKey: "user_id")
+        rest.urlQueryParameters.add(value: "\(survey_id)", forKey: "survey_id")
+        rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
+                    if let data = results.data {
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        guard let results = try? decoder.decode(Results.self, from: data) else { return }
+                        completion(results)
+                    }
+                }
+    }
+    
     static func getInterviewList(id: Int,completion: @escaping ([InterviewList]) -> ()) -> (){
         guard let url = URL(string: "http://46.101.246.71:8000/interviews/") else { return }
-        
         rest.urlQueryParameters.add(value: "\(id)", forKey: "user")
-        print (url)
-        
         rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
             if let data = results.data {
-                print(data)
-                
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let interviewList = try? decoder.decode([InterviewList].self, from: data) else { return }
-//                print(interviewList.count)
                 completion(interviewList)
-                
             }
         }
     }
@@ -75,15 +77,11 @@ struct DataFromApi {
             guard let url = URL(string: "http://46.101.246.71:8000/surveys/\(id)") else { return }
             rest.urlQueryParameters.add(value: "json", forKey: "format")
             rest.makeRequest(toURL: url, withHttpMethod: .get) { (results) in
-                
                 if let data = results.data {
-                    
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     guard let survey = try? decoder.decode(Survey.self, from: data) else { return }
-                    
                     completion(survey)
-                    
                 }
             }
         }
@@ -91,14 +89,10 @@ struct DataFromApi {
   
     static func createGrades(grade: Grade) {
         guard let url = URL(string: "http://46.101.246.71:8000/grades/") else { return }
-        
         let bodyData = "value=\(grade.value)&question_id=\(grade.questionId)&interview_id=\(grade.interviewId)"
-        
         var request = URLRequest(url: url)
-        
         request.httpMethod = "POST"
         request.httpBody = bodyData.data(using: String.Encoding.utf8)
-        
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let data = data {
