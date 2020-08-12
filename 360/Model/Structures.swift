@@ -15,15 +15,12 @@ struct User : Decodable {
     let isSuperuser: Bool
     var groups: [Group?]
     let photo: String?
-    
 }
-
 
 struct Group : Decodable {
     let id: Int
     var name: String
 }
-
 
 struct InterviewList : Decodable {
     let id: Int
@@ -97,4 +94,9 @@ struct Grade : Decodable {
 struct Categories : Decodable {
     let id: Int
     let name: String
+}
+
+struct LocalData {
+    static var userId: Int = 0
+    static var token: String = ""
 }

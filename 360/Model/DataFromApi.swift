@@ -67,7 +67,8 @@ struct DataFromApi {
                 let decoder = JSONDecoder()
                 guard let tokenUser = try? decoder.decode(Token.self, from: data) else { return }
                 let defaults = UserDefaults.standard
-                let JWT = tokenUser.token
+                LocalData.token = tokenUser.token
+                LocalData.userId = tokenUser.user.id ?? 1
                 defaults.set(tokenUser.user.id, forKey: "userID")
            }
     }
