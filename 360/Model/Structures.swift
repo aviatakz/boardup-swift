@@ -98,13 +98,3 @@ struct Categories : Decodable {
     let id: Int
     let name: String
 }
-
-struct GradePOST: Decodable {
-    let value: Int
-    let questionId: Int
-    let interviewId: Int
-}
-
-struct GroupPOST: Decodable {
-    let name: String
-}

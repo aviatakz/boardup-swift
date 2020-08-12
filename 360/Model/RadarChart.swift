@@ -11,9 +11,9 @@ import Charts
 
 struct RadarChart {
     let chartView = RadarChartView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
-    private var yourisOn:Bool = false
-    private var collegisOn:Bool = false
-    private var companyisOn:Bool = false
+    private var yourIsOn:Bool = false
+    private var collegIsOn:Bool = false
+    private var companyIsOn:Bool = false
     private var Characteristic: [String] = []
     private var entrySelf: [RadarChartDataEntry] = []
     private var entryColleagues: [RadarChartDataEntry] = []
@@ -61,13 +61,13 @@ struct RadarChart {
         set3.lineWidth = 2.0
         set3.drawHighlightCircleEnabled = true
         set3.setDrawHighlightIndicators(false)
-        if yourisOn{
+        if yourIsOn{
             sets.append(set1)
         }
-        if collegisOn{
+        if collegIsOn{
             sets.append(set2)
         }
-        if companyisOn{
+        if companyIsOn{
             sets.append(set3)
         }
         return sets
@@ -118,13 +118,13 @@ struct RadarChart {
     
     mutating func takeSet(Set key: Int)  {
         if key == 0{
-            self.yourisOn = self.yourisOn ? false:true
+            self.yourIsOn = self.yourIsOn ? false:true
         }
         if key == 1{
-            self.collegisOn = self.collegisOn ? false:true
+            self.collegIsOn = self.collegIsOn ? false:true
         }
         if key == 2{
-            self.companyisOn = self.companyisOn ? false:true
+            self.companyIsOn = self.companyIsOn ? false:true
         }
     }
 }
