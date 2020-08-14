@@ -8,9 +8,10 @@
 
 import UIKit
 import GoogleSignIn
-import RxSwift
-
+import Moya
+import PromiseKit
 class LoginViewController: UIViewController, GIDSignInDelegate {
+    let provider = MoyaProvider<MyService>()
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
@@ -39,9 +40,19 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
               return
             }
             // Perform any operations on signed in user here.
+        
             DispatchQueue.main.async {
                 if let token = user.authentication.accessToken {
-                    DataFromApi.requestToken(token: token)
+                    self.provider.request(.requestToken(token: token)) { result in
+                        switch result {
+                        case let .success(moyaResponse):
+                            let data = moyaResponse.data // Data, your JSON response is probably in here!
+                            let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
+                            print(String(data: data, encoding: .utf8))
+                        case .failure(_): break
+                            // TODO: handle the error == best. comment. ever.
+                        }
+                    }
                     self.signIn()
                 }
             }

@@ -42,13 +42,13 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
         let group = DispatchGroup()
         group.enter()
         
-        DataFromApi.getSurveyList(id: surveyId) { (survey) in
-            DispatchQueue.main.sync {
-                self.questionCount = survey.questions.count
-                self.questionsList = survey.questions
-                group.leave()
-            }
-        }
+//        DataFromApi.getSurveyList(id: surveyId) { (survey) in
+//            DispatchQueue.main.sync {
+//                self.questionCount = survey.questions.count
+//                self.questionsList = survey.questions
+//                group.leave()
+//            }
+//        }
         
         group.notify(queue: .main) {
             print("interview id: \(self.interviewId)")
@@ -148,7 +148,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
         for i in 0...(self.questionsList.count - 1) {
             let grade = Grade(id: 1, value: Int(self.sliders[i].value), questionId: self.questionsList[i].id, interviewId: self.interviewId)
             print(grade)
-            DataFromApi.createGrades(grade: grade)
+//            DataFromApi.createGrades(grade: grade)
         }
 //        DataFromApi.createComment(comment: self.commentField.value, interviewId: self.interviewId)
         self.navigationController?.popViewController(animated: true)

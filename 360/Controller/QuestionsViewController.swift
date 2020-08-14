@@ -8,14 +8,12 @@
 
 import UIKit
 import Kingfisher
-
+import Moya
 class QuestionsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var progressBar: UIProgressView!
-    
-    let defaults = UserDefaults.standard
-    
+    let provider = MoyaProvider<MyService>()
     var objectsArray: [Objects]  = [Objects(sectionNAme: "Оценить",done: false, sectionObject: []),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: [])]
     
     override func viewDidLoad() {
@@ -26,19 +24,40 @@ class QuestionsViewController: UIViewController {
     }
     
     func loadData() {
-        DataFromApi.getInterviewList(id: UserDefaults.standard.integer(forKey: "userID")) { (results) in
-            for user in results{
-                if user.isDone{
-                    self.objectsArray[1].sectionObject!.append(user)
-                }else{
-                    self.objectsArray[0].sectionObject!.append(user)
+        let viewDesign = ViewDesign()
+        let activityIndicator = viewDesign.getActivityIndicator(view: view)
+        activityIndicator.startAnimating()
+        provider.request(.getInterviewList(userId: 16)) { result in
+            switch result {
+                case let .success(moyaResponse):
+                    do {
+                        let data = try moyaResponse.filterSuccessfulStatusCodes().data
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        guard let interviewList = try? decoder.decode([InterviewList].self, from: data) else { return }
+                        for user in interviewList{
+                            if user.isDone ?? false{
+                                            self.objectsArray[1].sectionObject!.append(user)
+                                        }else{
+                                            self.objectsArray[0].sectionObject!.append(user)
+                                        }
+                                    }
+                        activityIndicator.stopAnimating()
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.progressBar.progress = self.getProgress()
+                        }
+                    }catch{
+                        print("Error with decoding user\(error)")
+                        // Here we get either statusCode error or objectMapping error.
+                        // TODO: handle the error == best. comment. ever.
+                    }
+            case .failure(_): break
+                    // TODO: handle the error == best. comment. ever.
                 }
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.progressBar.progress = self.getProgress()
-            }
+
         }
+        
     }
     
 }
@@ -63,11 +82,11 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
         }else{
             cell.doneColorView.backgroundColor = .systemGreen
         }
-        if let stringUrl = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.photo{
+        if let stringUrl = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser?.photo{
             let url = URL(string: stringUrl)
             cell.personeImg.kf.setImage(with: url)
         }
-        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser.username
+        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser?.username
         return cell
     }
     
@@ -95,7 +114,7 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let secondViewController = storyboard.instantiateViewController(identifier: "SurveyViewController") as? SurveyViewController else { return }
             secondViewController.interviewId = user.id
-            secondViewController.surveyId = user.surveyId
+            secondViewController.surveyId = user.surveyId ?? 0
             
             show(secondViewController, sender: nil)
             

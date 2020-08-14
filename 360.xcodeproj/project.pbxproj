@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07D36961E89CD25FBAB9262E /* Pods_360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29057435BC23C7786ADD5505 /* Pods_360.framework */; };
+		A31F75EF24E56B0E000AC3AD /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F75EE24E56B0E000AC3AD /* MyService.swift */; };
 		A329C48B24BD825F00EE1057 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329C48A24BD825E00EE1057 /* PersonTableViewCell.swift */; };
 		A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353DD6E24B6F270001AE486 /* AppDelegate.swift */; };
 		A353DD7124B6F270001AE486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353DD7024B6F270001AE486 /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		06B41CF73E506ABCD26E9C17 /* Pods-360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-360.release.xcconfig"; path = "Target Support Files/Pods-360/Pods-360.release.xcconfig"; sourceTree = "<group>"; };
 		29057435BC23C7786ADD5505 /* Pods_360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31F75EE24E56B0E000AC3AD /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		A329C48A24BD825E00EE1057 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		A353DD6B24B6F270001AE486 /* 360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A353DD6E24B6F270001AE486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
 				A3A1F63324C8A88600BAC778 /* ProfileData.swift */,
 				A3A1F63524C8AB8C00BAC778 /* ViewDesign.swift */,
+				A31F75EE24E56B0E000AC3AD /* MyService.swift */,
 				C5739CE124CEC6E9004FB761 /* RestManager.swift */,
 			);
 			path = Model;
@@ -319,6 +322,7 @@
 				A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */,
 				A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */,
 				A3A1F63624C8AB8C00BAC778 /* ViewDesign.swift in Sources */,
+				A31F75EF24E56B0E000AC3AD /* MyService.swift in Sources */,
 				A353DD7124B6F270001AE486 /* SceneDelegate.swift in Sources */,
 				C5739CE224CEC6E9004FB761 /* RestManager.swift in Sources */,
 				A3A1F63A24C8B52D00BAC778 /* RadarChartXValueFormatter.swift in Sources */,

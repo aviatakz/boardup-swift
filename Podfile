@@ -15,6 +15,9 @@ target '360' do
   
   #pod for downloading images
   pod "Kingfisher"
+#  pod "RxSwift"
+  pod "Moya"
+  pod "PromiseKit"
   
-  pod "RxSwift"
+  
 end

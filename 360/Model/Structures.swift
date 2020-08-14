@@ -11,8 +11,10 @@ import Foundation
 struct User : Decodable {
     let id: Int?
     var username: String
+    let firstName: String?
+    let lastName: String?
     var email: String
-    let isSuperuser: Bool
+    let isSuperuser: Bool?
     var groups: [Group?]
     let photo: String?
 }
@@ -24,13 +26,13 @@ struct Group : Decodable {
 
 struct InterviewList : Decodable {
     let id: Int
-    let userId: Int
-    let targetUserId: Int
-    let targetUser: User
-    let surveyId: Int
-    let createdAt: String
+    let userId: Int?
+    let targetUserId: Int?
+    let targetUser: User?
+    let surveyId: Int?
+    let createdAt: String?
     let comment: String
-    let isDone: Bool
+    let isDone: Bool?
 }
 
 
@@ -54,7 +56,7 @@ struct Results: Decodable {
 }
 
 struct ResultAVG: Decodable {
-    let questionCategory: Int
+    let questionCategory: Int?
     let avg: Float
 }
 

@@ -9,7 +9,8 @@
 import UIKit
 import GoogleSignIn
 import Kingfisher
-
+import Moya
+import PromiseKit
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameAndsurnameLabel: UILabel!
@@ -23,20 +24,37 @@ class ProfileViewController: UIViewController {
     
     let data = ProfileData()
     let viewDesign = ViewDesign()
-    
+    let provider = MoyaProvider<MyService>()
     override func viewDidLoad() {
         super.viewDidLoad()
         let activityIndicator = viewDesign.getActivityIndicator(view: view)
         activityIndicator.startAnimating()
-        DataFromApi.getSingleUser(id: UserDefaults.standard.integer(forKey: "userID")) { (user) in
-            DispatchQueue.main.async{
-                self.nameAndsurnameLabel.text = user.username
-                self.emailAddressLabel.text = user.email
-                let url = URL(string: user.photo!)
-                self.userImage.kf.setImage(with: url)
-                activityIndicator.stopAnimating()
-                                    }
+        provider.request(.getSingleUser(userId: 16)) { result in
+            switch result {
+                case let .success(moyaResponse):
+                    do {
+                        let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+                        let user = try filteredResponse.map(User.self) // user is of type User
+                        let url = URL(string: user.photo ?? "https://lh3.googleusercontent.com/a-/AOh14Ggvty4ioOpYjEgsv9IPVukR-yUyLhlkHO-Qcal-")
+                        self.userImage.kf.setImage(with: url)
+                        self.nameAndsurnameLabel.text = user.username
+                        self.emailAddressLabel.text = user.email
+                        activityIndicator.stopAnimating()
+                    }catch{
+                        print("Error with decoding user\(error)")
+                        // Here we get either statusCode error or objectMapping error.
+                        // TODO: handle the error == best. comment. ever.
+                    }
+            case .failure(_): break
+                    // TODO: handle the error == best. comment. ever.
+                }
+
         }
+        
+        
+ 
+
+        
       
         userImage.image = data.getUserImage()
         viewDesign.userImageDesign(userImage)
@@ -60,4 +78,5 @@ class ProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
 }
