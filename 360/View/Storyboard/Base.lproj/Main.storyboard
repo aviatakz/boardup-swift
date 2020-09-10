@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8JH-lm-iMk">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="0F8-EI-QYA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rs-R5-0ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="loginViewController" id="qeA-3Q-krx" customClass="LoginViewController" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bbq-05-8b8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="3hn-87-5mS">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360icon" translatesAutoresizingMaskIntoConstraints="NO" id="yDT-ii-Nxw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kbs-8e-8uM">
+                                        <rect key="frame" x="0.0" y="268" width="375" height="198"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360 app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqw-If-6jf">
+                                                <rect key="frame" x="132.33333333333334" y="0.0" width="110.33333333333334" height="118"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-nv-NGO" customClass="GIDSignInButton">
+                                                <rect key="frame" x="20" y="138" width="335" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="tGV-fs-M7I"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="QU5-nv-NGO" firstAttribute="leading" secondItem="kbs-8e-8uM" secondAttribute="leading" constant="20" id="btD-vK-a3S"/>
+                                            <constraint firstAttribute="trailing" secondItem="QU5-nv-NGO" secondAttribute="trailing" constant="20" id="hOX-vW-UJp"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZG-xr-tGk">
+                                        <rect key="frame" x="0.0" y="536" width="375" height="198"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3hn-87-5mS" firstAttribute="leading" secondItem="hPI-jh-E2b" secondAttribute="leading" id="L1t-LQ-JIx"/>
+                            <constraint firstItem="hPI-jh-E2b" firstAttribute="trailing" secondItem="3hn-87-5mS" secondAttribute="trailing" id="Z1k-ke-mA0"/>
+                            <constraint firstItem="3hn-87-5mS" firstAttribute="top" secondItem="hPI-jh-E2b" secondAttribute="top" id="iHm-gU-ATC"/>
+                            <constraint firstItem="hPI-jh-E2b" firstAttribute="bottom" secondItem="3hn-87-5mS" secondAttribute="bottom" id="t4x-sQ-v2f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hPI-jh-E2b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zcQ-I8-8el"/>
+                    <connections>
+                        <segue destination="V8g-ZX-gJB" kind="show" identifier="tabBarController" id="zSF-Rg-ov5"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1298.4000000000001" y="-453.69458128078821"/>
+        </scene>
+        <!--Tabbar-->
+        <scene sceneID="DQ4-UW-lv9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabbar" id="V8g-ZX-gJB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yAp-4J-OUj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uv0-b9-XTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2195" y="-454"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3xQ-1B-Isj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8JH-lm-iMk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cet-rN-wPK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qeA-3Q-krx" kind="relationship" relationship="rootViewController" id="kYa-Mf-FZt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5q-3I-96u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="-453.69458128078821"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="360icon" width="1024" height="1024"/>
+    </resources>
+</document>
