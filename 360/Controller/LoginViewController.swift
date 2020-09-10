@@ -22,11 +22,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     
     func signIn() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: Key.Identifier.signIn)
-        secondVC.modalPresentationStyle = .fullScreen
-        secondVC.modalTransitionStyle = .crossDissolve
-        present(secondVC, animated: true, completion: nil)
+        performSegue(withIdentifier: Key.Identifier.signIn, sender: self)
     }
     
     
