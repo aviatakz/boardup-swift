@@ -24,9 +24,6 @@ class QuestionsViewController: UIViewController {
     }
     
     func loadData() {
-        let viewDesign = ViewDesign()
-        let activityIndicator = viewDesign.getActivityIndicator(view: view)
-        activityIndicator.startAnimating()
         provider.request(.getInterviewList(userId: 16)) { result in
             switch result {
                 case let .success(moyaResponse):
@@ -42,7 +39,6 @@ class QuestionsViewController: UIViewController {
                                             self.objectsArray[0].sectionObject!.append(user)
                                         }
                                     }
-                        activityIndicator.stopAnimating()
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                             self.progressBar.progress = self.getProgress()

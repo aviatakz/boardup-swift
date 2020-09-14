@@ -15,7 +15,6 @@
         <!--Profile View Controller-->
         <scene sceneID="36s-MI-CP8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fPq-cS-qfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="qOj-s8-Mid" customClass="ProfileViewController" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="255-ee-vzq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -27,6 +26,12 @@
                                     <constraint firstAttribute="height" constant="150" id="DOc-EQ-EwF"/>
                                     <constraint firstAttribute="width" constant="150" id="HZf-2e-diV"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="E40-Bj-RRA">
                                 <rect key="frame" x="20" y="268" width="374" height="104"/>
@@ -81,6 +86,12 @@
                                     <constraint firstItem="6qC-FE-hQT" firstAttribute="top" secondItem="yID-rT-kA6" secondAttribute="top" constant="10" id="V4E-0a-1pg"/>
                                     <constraint firstAttribute="bottom" secondItem="6qC-FE-hQT" secondAttribute="bottom" constant="10" id="ydQ-Ad-awm"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-u8-ct3">
                                 <rect key="frame" x="30" y="491" width="354" height="84"/>
@@ -111,6 +122,12 @@
                                     <constraint firstItem="MGU-z1-f3D" firstAttribute="leading" secondItem="uD9-u8-ct3" secondAttribute="leading" constant="20" id="TZa-qa-edU"/>
                                     <constraint firstItem="MGU-z1-f3D" firstAttribute="top" secondItem="uD9-u8-ct3" secondAttribute="top" constant="10" id="sIh-UM-Loz"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,13 +159,13 @@
                         <outlet property="userImage" destination="tWU-VY-pFR" id="qBl-zB-k57"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPq-cS-qfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="1918"/>
         </scene>
         <!--Profile-->
         <scene sceneID="4qL-Ow-cnq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="byH-MX-GFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9kn-2f-ynQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="userActive" id="VEA-02-FlT"/>
                     <toolbarItems/>
@@ -162,6 +179,7 @@
                         <segue destination="qOj-s8-Mid" kind="relationship" relationship="rootViewController" id="e89-Dt-RnT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byH-MX-GFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="1016.7487684729065"/>
         </scene>

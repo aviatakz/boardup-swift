@@ -1,5 +1,5 @@
 //
-//  Interview.swift
+//  Categories.swift
 //  360
 //
 //  Created by Adilzhan Akhayev on 9/10/20.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct Interview : Decodable {
+struct Categories : Decodable {
     let id: Int
-    let userId: Int
-    let targetUserId: Int
-    var comment: String?
-    let survey: Survey
+    let name: String
 }

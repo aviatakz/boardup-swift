@@ -54,13 +54,13 @@ extension MyService: TargetType{
     var task: Task {
         switch self {
         case .requestToken(token: let token):
-            return .requestParameters(parameters: ["access_token":token], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["access_token":token], encoding: JSONEncoding.default)
         case .getSingleUser(userId: _):
             return .requestPlain
         case .getInterviewsResults(userId: let userId, surveyId: let surveyId):
             return .requestParameters(parameters: ["user_id":userId,"survey_id":surveyId], encoding: URLEncoding.queryString)
         case .getInterviewList(userId: let userId):
-            return .requestParameters(parameters: ["user":"\(userId)"], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["user":userId], encoding: URLEncoding.queryString)
         case .getSurveyList(id: _):
             return .requestParameters(parameters: ["format":"json"], encoding: URLEncoding.queryString)
         case .createGrades(grade: let grade):
@@ -69,7 +69,7 @@ extension MyService: TargetType{
     }
     
     var headers: [String: String]? {
-        return ["Content-type": "application/json"]//["Content-type": "application/json","Cookie": ""]
+        return nil
     }
 }
 
@@ -80,6 +80,17 @@ private extension String {
 
     var utf8Encoded: Data {
         return data(using: .utf8)!
+    }
+}
+
+extension MyService: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType? {
+        switch self {
+        case .requestToken(token: _):
+                return .none
+        default:
+            return .custom("JWT")
+        }
     }
 }
 

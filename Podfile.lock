@@ -27,24 +27,15 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
-    - PromiseKit/CorePromise
-  - RxSwift (5.1.1)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Charts
   - GoogleSignIn
   - Kingfisher
   - Moya
-  - PromiseKit
-  - RxSwift
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -56,8 +47,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - Moya
-    - PromiseKit
-    - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -68,9 +58,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: b10bf12a465c5ff259d5bbdb10368ba33cee5214
+PODFILE CHECKSUM: 571055348465b7b41ad7b28b9ab94d380105b5e4
 
 COCOAPODS: 1.9.3

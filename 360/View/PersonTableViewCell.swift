@@ -17,8 +17,6 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var doneColorView: UIView!
     
     
-    let viewDesign = ViewDesign()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
