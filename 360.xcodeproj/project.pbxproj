@@ -33,6 +33,9 @@
 		A3938675250A36290099C0F1 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938674250A36290099C0F1 /* Categories.swift */; };
 		A3938678250A44B50099C0F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938677250A44B50099C0F1 /* LoginViewModel.swift */; };
 		A393867A250A57BB0099C0F1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938679250A57BB0099C0F1 /* ProfileViewModel.swift */; };
+		A39386A1250FF1A00099C0F1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39386A0250FF1A00099C0F1 /* Observable.swift */; };
+		A39386A3250FFF630099C0F1 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39386A2250FFF630099C0F1 /* QuestionsViewModel.swift */; };
+		A39386A525100D2C0099C0F1 /* DiagramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39386A425100D2C0099C0F1 /* DiagramViewModel.swift */; };
 		A39FC1D524C18CBA00565D89 /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FC1D424C18CBA00565D89 /* DiagramViewController.swift */; };
 		A3A1F63A24C8B52D00BAC778 /* RadarChartXValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63924C8B52D00BAC778 /* RadarChartXValueFormatter.swift */; };
 		A3A1F63C24C8BBF400BAC778 /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */; };
@@ -75,6 +78,9 @@
 		A3938674250A36290099C0F1 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A3938677250A44B50099C0F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A3938679250A57BB0099C0F1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A39386A0250FF1A00099C0F1 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		A39386A2250FFF630099C0F1 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		A39386A425100D2C0099C0F1 /* DiagramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewModel.swift; sourceTree = "<group>"; };
 		A39FC1D424C18CBA00565D89 /* DiagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		A3A1F63924C8B52D00BAC778 /* RadarChartXValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartXValueFormatter.swift; sourceTree = "<group>"; };
 		A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
@@ -198,9 +204,11 @@
 		A393865B250A10460099C0F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A3938677250A44B50099C0F1 /* LoginViewModel.swift */,
 				A3938679250A57BB0099C0F1 /* ProfileViewModel.swift */,
-				A393865E250A34A10099C0F1 /* Something */,
+				A3938677250A44B50099C0F1 /* LoginViewModel.swift */,
+				A39386A2250FFF630099C0F1 /* QuestionsViewModel.swift */,
+				A39386A425100D2C0099C0F1 /* DiagramViewModel.swift */,
+				A393865E250A34A10099C0F1 /* Helpers */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -213,12 +221,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		A393865E250A34A10099C0F1 /* Something */ = {
+		A393865E250A34A10099C0F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A39386A0250FF1A00099C0F1 /* Observable.swift */,
 				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
 			);
-			path = Something;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C35FFD62B48816FEFFD951BF /* Pods */ = {
@@ -242,9 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */,
+				A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */,
 				A39FC1D424C18CBA00565D89 /* DiagramViewController.swift */,
 				A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */,
-				A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */,
 				C50443C024C454E4003CA29C /* SurveyViewController.swift */,
 			);
 			path = Controller;
@@ -402,10 +411,13 @@
 				A3EAE54424B852D2006B41C7 /* Structures.swift in Sources */,
 				A3938670250A35F80099C0F1 /* Question.swift in Sources */,
 				A3938664250A35260099C0F1 /* InterviewList.swift in Sources */,
+				A39386A1250FF1A00099C0F1 /* Observable.swift in Sources */,
 				C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */,
 				A329C48B24BD825F00EE1057 /* PersonTableViewCell.swift in Sources */,
 				A3A1F63C24C8BBF400BAC778 /* RadarChart.swift in Sources */,
+				A39386A525100D2C0099C0F1 /* DiagramViewModel.swift in Sources */,
 				A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */,
+				A39386A3250FFF630099C0F1 /* QuestionsViewModel.swift in Sources */,
 				A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */,
 				A393866A250A359F0099C0F1 /* ResultAVG.swift in Sources */,
 				A3938673250A36160099C0F1 /* Grade.swift in Sources */,

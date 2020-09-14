@@ -26,11 +26,11 @@ extension MyService: TargetType{
         case .requestToken( _):
             return "/auth/google/"
         case .getSingleUser(let usereId):
-            return "/users/\(usereId)"
+            return "/users/\(usereId)/"
         case .getInterviewsResults( _, _):
-            return "/interviews/results"
+            return "/interviews/results/"
         case .getInterviewList( _):
-            return "/interviews"
+            return "/interviews/"
         case .getSurveyList(let id):
             return "/surveys/\(id)"
         case .createGrades( _):

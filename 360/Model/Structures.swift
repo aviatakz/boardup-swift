@@ -9,12 +9,16 @@
 import Foundation
 
 struct Objects {
-    var sectionNAme: String?
-    var done: Bool?
-    var sectionObject: [InterviewList]?
+    var sectionNAme: String
+    var done: Bool
+    var sectionObject: [InterviewList]
 }
-
+//struct LocalData {
+//    static var user = Observable<[Token]>([])
+//}
 struct LocalData {
-    static var userId: Int = 19
-    static var token: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJ2bGFkaXNsYXYiLCJleHAiOjE2MDUyNDEwMDQsImVtYWlsIjoidmxhZEBhdmlhdGEubWUifQ.rcUMBYDhk8FK_oyG6eRF-IpAfON9Qhh37g5lsq1nWlw"
+    static var userId: Int = 0
+    static var token: String = ""
+    static var surveyId: Int = 41
 }
+let myNotificationKey = "com.bobthedeveloper.notificationKey"

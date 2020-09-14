@@ -10,7 +10,6 @@ import UIKit
 import Moya
 class LoginViewModel {
     private let provider = MoyaProvider<MyService>()
-
     func setJWT(from token: String) {
         self.provider.request(.requestToken(token: token)) { result in
             switch result {
@@ -19,15 +18,14 @@ class LoginViewModel {
                     let data = try moyaResponse.filterSuccessfulStatusCodes().data
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let tokenJWTandUser = try decoder.decode(Token.self, from: data)
-                    print("JWT: \(tokenJWTandUser.token)")
-                    LocalData.token = tokenJWTandUser.token
-                    LocalData.userId = tokenJWTandUser.user.id
+                    let tokenAndUser = try decoder.decode(Token.self, from: data)
+                    LocalData.token = tokenAndUser.token
+                    LocalData.userId = tokenAndUser.user.id
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: self)
                 }catch{
                     print("Error with decoding News: \(error)")
                 }
             case .failure(_): break
-                // TODO: handle the error == best. comment. ever.
             }
         }
     }

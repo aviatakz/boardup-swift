@@ -8,41 +8,51 @@
 
 import UIKit
 import GoogleSignIn
-import Alamofire
+
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameAndsurnameLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
-
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
-
-    @IBOutlet weak var boxView: UIView!
-    @IBOutlet weak var boxView2: UIView!
-    
+    let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     var viewModel = ProfileViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
-        self.navigationItem.title = "360"
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(checkAction))
-
-        boxView2.addGestureRecognizer(gesture)
-        viewModel.fetchData()
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJ2bGFkaXNsYXYiLCJleHAiOjE2MDUyNjM3MTAsImVtYWlsIjoidmxhZEBhdmlhdGEubWUifQ.5IRwh-DM7EvlcvbjnTuM2_THOkEi9pgpDHDaIj-q280"
-        ]
-
-        AF.request("http://46.101.246.71:8000/users/19", headers: headers).responseJSON { response in
-            debugPrint(response)
+        setLoader()
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(doThisWhenNotify),
+        name: NSNotification.Name(rawValue: myNotificationKey),
+        object: nil)
+        viewModel.userInfo.bind { _ in
+            self.setInfo()
+            self.alert.dismiss(animated: true, completion: nil)
         }
-    }
-    @objc func checkAction(sender : UITapGestureRecognizer) {
-        viewModel.fetchData()
+        
     }
     
+    func setLoader() {
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func setNavigator() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(handleSignOutButtonTapped))
+        self.navigationItem.title = "360"
+    }
+    
+    func setInfo() {
+        viewModel.setData(image: userImage, nameandSurname: nameAndsurnameLabel, email: emailAddressLabel)
+    }
+    
+    @objc func doThisWhenNotify() {
+        viewModel.fetchData()
+    }
     
     @objc func handleSignOutButtonTapped() {
         let alert = UIAlertController(title: "Alert", message: "Are you Sure You want to Logout", preferredStyle: .alert)

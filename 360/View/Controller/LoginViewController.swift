@@ -15,7 +15,6 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        // Automatically sign in the user.
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
         
@@ -38,12 +37,9 @@ extension LoginViewController: GIDSignInDelegate {
                 self.viewModel.setJWT(from: token)
                 self.signIn()
             }
-
         }
     
-    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-            // Perform any operations when the user disconnects from app here.
             print("User has disconnected")
         }
 }

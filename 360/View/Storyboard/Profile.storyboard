@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="tWU-VY-pFR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWU-VY-pFR">
                                 <rect key="frame" x="132" y="108" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="DOc-EQ-EwF"/>
@@ -68,7 +68,7 @@
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Директор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u34-gk-SJ6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u34-gk-SJ6">
                                                 <rect key="frame" x="0.0" y="32" width="314" height="32"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                                 <nil key="textColor"/>
@@ -105,7 +105,7 @@
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-x5-Wj3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-x5-Wj3">
                                                 <rect key="frame" x="0.0" y="32" width="314" height="32"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                                 <nil key="textColor"/>
@@ -150,8 +150,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="lrV-6j-JBp"/>
                     <connections>
-                        <outlet property="boxView" destination="yID-rT-kA6" id="5Ff-qG-HmY"/>
-                        <outlet property="boxView2" destination="uD9-u8-ct3" id="ora-ok-H1s"/>
                         <outlet property="departmentLabel" destination="oUe-x5-Wj3" id="77B-Ql-oCe"/>
                         <outlet property="emailAddressLabel" destination="Q89-06-PmD" id="h8t-d4-tjU"/>
                         <outlet property="nameAndsurnameLabel" destination="eaI-AS-YRz" id="yiN-h3-wjI"/>
@@ -185,7 +183,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person" width="375" height="500"/>
         <image name="user" width="25" height="25"/>
         <image name="userActive" width="25" height="25"/>
     </resources>

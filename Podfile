@@ -17,6 +17,5 @@ target '360' do
   pod "Kingfisher"
   pod "Moya"
   pod "Alamofire"
-  pod "SwiftyJSON"
   
 end

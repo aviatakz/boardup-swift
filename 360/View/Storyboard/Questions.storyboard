@@ -15,7 +15,6 @@
         <!--Questions View Controller-->
         <scene sceneID="GZG-cz-ARQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z99-Wt-q66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="fxs-5Q-pTk" customClass="QuestionsViewController" customModule="_60" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0LS-Mt-kP3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -45,13 +44,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wrk-pf-5ct">
                                                             <rect key="frame" x="90" y="15" width="274" height="48"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matilda Brown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d14-kY-dal">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d14-kY-dal">
                                                                     <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR | Директор" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1T-qv-vQn">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1T-qv-vQn">
                                                                     <rect key="frame" x="0.0" y="24" width="274" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,13 +128,13 @@
                         <segue destination="bRf-tt-kcK" kind="show" identifier="segueSurveyView" id="fC4-6k-Q8l"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z99-Wt-q66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4276" y="1016.7487684729065"/>
         </scene>
         <!--Diagram-->
         <scene sceneID="cBj-xe-q30">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hUd-JZ-Xko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="SEt-5X-dhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diagram" image="chart" selectedImage="diagramActive" id="Exv-LU-62u"/>
                     <toolbarItems/>
@@ -148,6 +147,7 @@
                         <segue destination="fxs-5Q-pTk" kind="relationship" relationship="rootViewController" id="StZ-Yn-XxW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUd-JZ-Xko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3333.5999999999999" y="1016.7487684729065"/>
         </scene>

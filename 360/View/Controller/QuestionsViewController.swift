@@ -7,82 +7,43 @@
 //
 
 import UIKit
-import Kingfisher
-import Moya
-class QuestionsViewController: UIViewController {
 
+class QuestionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var progressBar: UIProgressView!
-    let provider = MoyaProvider<MyService>()
-    var objectsArray: [Objects]  = [Objects(sectionNAme: "Оценить",done: false, sectionObject: []),Objects(sectionNAme: "Прошли оценку",done: true, sectionObject: [])]
-    
+    var viewModel = QuestionsViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = true
-        // Do any additional setup after loading the view.
-        loadData()
-    }
-    
-    func loadData() {
-        provider.request(.getInterviewList(userId: 16)) { result in
-            switch result {
-                case let .success(moyaResponse):
-                    do {
-                        let data = try moyaResponse.filterSuccessfulStatusCodes().data
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        guard let interviewList = try? decoder.decode([InterviewList].self, from: data) else { return }
-                        for user in interviewList{
-                            if user.isDone ?? false{
-                                            self.objectsArray[1].sectionObject!.append(user)
-                                        }else{
-                                            self.objectsArray[0].sectionObject!.append(user)
-                                        }
-                                    }
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                            self.progressBar.progress = self.getProgress()
-                        }
-                    }catch{
-                        print("Error with decoding user\(error)")
-                        // Here we get either statusCode error or objectMapping error.
-                        // TODO: handle the error == best. comment. ever.
-                    }
-            case .failure(_): break
-                    // TODO: handle the error == best. comment. ever.
-                }
-
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(doThisWhenNotify),
+        name: NSNotification.Name(rawValue: myNotificationKey),
+        object: nil)
+        viewModel.interviewListSelf.bind { _ in
+            self.tableView.reloadData()
+            self.progressBar.progress = self.viewModel.getProgress()
         }
-        
+        viewModel.fetchData()
     }
     
+    @objc func doThisWhenNotify() {
+        viewModel.fetchData()
+    }
 }
-
-
+//MARK: - delegate and DataSource
 extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return objectsArray.count
+        return viewModel.getCountSection()
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objectsArray[section].sectionObject?.count ?? 0
+        return viewModel.getSectionCount(numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Key.Identifier.cell, for: indexPath) as! PersonTableViewCell  // getCell
-                
-        if objectsArray[indexPath.section].done!{
-            cell.doneColorView.backgroundColor = .systemGray5
-        }else{
-            cell.doneColorView.backgroundColor = .systemGreen
-        }
-        if let stringUrl = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser?.photo{
-            let url = URL(string: stringUrl)
-            cell.personeImg.kf.setImage(with: url)
-        }
-        cell.personeNameAndSurnameLalel.text = objectsArray[indexPath.section].sectionObject?[indexPath.row].targetUser?.username
+        let cell = tableView.dequeueReusableCell(withIdentifier: Key.Identifier.cell, for: indexPath) as! PersonTableViewCell
+        viewModel.setData(cell, cellForRowAt: indexPath)
         return cell
     }
     
@@ -91,7 +52,7 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
         let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
         view.backgroundColor = .systemGray6
         let  lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 60))
-        lbl.text = objectsArray[section].sectionNAme
+        lbl.text = viewModel.getSectionName(viewForHeaderInSection: section)
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
         view.addSubview(lbl)
         return view
@@ -102,36 +63,8 @@ extension QuestionsViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let users = objectsArray[0].sectionObject{
-            let user = users[indexPath.row]
-            print(user.surveyId)
-            print(user.id)
-            performSegue(withIdentifier: Key.Identifier.afterQuestions, sender: self)
-        }
+//        viewModel.getInterviewUser(didSelectRowAt: indexPath)
+        performSegue(withIdentifier: Key.Identifier.afterQuestions, sender: self)
     }
-    
-    
-    
-    func getProgress() -> Float{
-           let answer = Float(getDoneCount()) / Float(getAllTaskCount())
-           return answer
-    }
-       
-
-    func getDoneCount() -> Int {
-       return objectsArray[1].sectionObject!.count
-    }
-
-
-    func getAllTaskCount() -> Int {
-       var answer = 0
-       for i in objectsArray{
-           for _ in i.sectionObject!{
-               answer += 1
-           }
-       }
-       return answer
-    }
-    
 }
 
