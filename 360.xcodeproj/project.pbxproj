@@ -34,6 +34,7 @@
 		C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50443C024C454E4003CA29C /* SurveyViewController.swift */; };
 		C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */; };
 		C5739CE224CEC6E9004FB761 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739CE124CEC6E9004FB761 /* RestManager.swift */; };
+		C5819D912511F85B00F4A81D /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5819D902511F85B00F4A81D /* SurveyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		C50443C024C454E4003CA29C /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		C5739CE124CEC6E9004FB761 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		C5819D902511F85B00F4A81D /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
 		EB0339FDA03230FF4FCA8A82 /* Pods-360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-360.debug.xcconfig"; path = "Target Support Files/Pods-360/Pods-360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 				A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */,
 				A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */,
 				C50443C024C454E4003CA29C /* SurveyViewController.swift */,
+				C5819D902511F85B00F4A81D /* SurveyViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5819D912511F85B00F4A81D /* SurveyViewModel.swift in Sources */,
 				A39FC1D524C18CBA00565D89 /* DiagramViewController.swift in Sources */,
 				A3A1F63E24C8CC0A00BAC778 /* Constants.swift in Sources */,
 				A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */,

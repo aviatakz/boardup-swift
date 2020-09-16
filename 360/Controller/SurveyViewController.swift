@@ -11,66 +11,45 @@ import UIKit
 class SurveyViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var mainView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    var questionCount = 10
-    
-    var questionsList = [Question]()
-    
-    var sliders = [UISlider]()
-    
-    var surveyId: Int = 30
-    
-    var interviewId: Int = 33
-    
-    let pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 500, height: 40))
-    
-    let labelCurrentPage : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
-    
-    var contentWidth : CGFloat = 0.0
+    var viewModel: SurveyViewModel = SurveyViewModel()
     
     var lightGreen : UIColor = UIColor(red: 0.00, green: 0.74, blue: 0.00, alpha: 1.00)
     var whiteText : UIColor = UIColor(red: 0.97, green: 0.98, blue: 0.98, alpha: 1.00)
-    
     var customFont : UIFont = UIFont(name: "Montserrat", size: 17)!
+    let pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 500, height: 40))
+    let labelCurrentPage : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+    var contentWidth : CGFloat = 0.0
+    var sliders = [UISlider]()
     
     var commentField = UITextField()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         let group = DispatchGroup()
         group.enter()
-        
-//        DataFromApi.getSurveyList(id: surveyId) { (survey) in
-//            DispatchQueue.main.sync {
-//                self.questionCount = survey.questions.count
-//                self.questionsList = survey.questions
-//                group.leave()
-//            }
-//        }
+        viewModel.loadData(group: group)
         
         group.notify(queue: .main) {
-            print("interview id: \(self.interviewId)")
-            print("survey id: \(self.surveyId)")
+            print("interview id: \(self.viewModel.interviewId)")
+            print("survey id: \(self.viewModel.surveyId)")
             self.scrollView.delegate = self
             
             self.labelCurrentPage.frame.origin.x = self.view.frame.midX + 110
             self.labelCurrentPage.frame.origin.y = (self.view.frame.midY / 2) - 80
             self.labelCurrentPage.textAlignment = .center
-            self.labelCurrentPage.text = "1/\(self.questionCount + 1)"
+            self.labelCurrentPage.text = "1/\(self.viewModel.questionCount + 1)"
             self.labelCurrentPage.font = self.customFont
             
             self.pageControl.frame.origin.x = self.view.frame.midX - 250
             self.pageControl.frame.origin.y = self.view.frame.midY
-            self.pageControl.numberOfPages = self.questionCount + 1
+            self.pageControl.numberOfPages = self.viewModel.questionCount + 1
             self.pageControl.currentPageIndicatorTintColor = .black
             self.pageControl.pageIndicatorTintColor = .lightGray
             
             self.mainView.addSubview(self.pageControl)
             self.mainView.addSubview(self.labelCurrentPage)
             
-            for i in 0...(self.questionCount - 1) {
+            for i in 0...(self.viewModel.questionCount - 1) {
                 let xCoordinate = self.view.frame.midX + self.view.frame.width * CGFloat(i)
                 
                 let slider = UISlider(frame: CGRect(x: xCoordinate - 125, y: self.view.frame.midY, width: 250, height: 40))
@@ -86,7 +65,7 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
                 questionView.layer.cornerRadius = 20
                 
                 let labelToDisplay = UILabel(frame: CGRect(x: xCoordinate - 125, y: (self.view.frame.midY / 2) - 100, width: 250, height: 200))
-                labelToDisplay.text = "\(i+1). \(self.questionsList[i].description)"
+                labelToDisplay.text = "\(i+1). \(self.viewModel.questionsList[i].description)"
                 
                 labelToDisplay.lineBreakMode = .byWordWrapping
                 labelToDisplay.numberOfLines = 0
@@ -141,16 +120,11 @@ class SurveyViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)
-        labelCurrentPage.text = "\(Int(pageNumber) + 1)/\(self.questionCount + 1)"
+        labelCurrentPage.text = "\(Int(pageNumber) + 1)/\(self.viewModel.questionCount + 1)"
     }
     
     @objc func sendAllGrades(sender: UIButton!) {
-        for i in 0...(self.questionsList.count - 1) {
-            let grade = Grade(id: 1, value: Int(self.sliders[i].value), questionId: self.questionsList[i].id, interviewId: self.interviewId)
-            print(grade)
-//            DataFromApi.createGrades(grade: grade)
-        }
-//        DataFromApi.createComment(comment: self.commentField.value, interviewId: self.interviewId)
+        viewModel.sendAllGrades(sliders: self.sliders, comment: self.commentField.text ?? "")
         self.navigationController?.popViewController(animated: true)
     }
     

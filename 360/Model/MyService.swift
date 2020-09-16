@@ -14,6 +14,7 @@ enum MyService {
     case getInterviewList(userId: Int)
     case getSurveyList(id:Int)
     case createGrades(grade: Grade)
+    case editInterview(interviewId: Int, surveyId: Int, comment: String)
 }
 
 extension MyService: TargetType{
@@ -35,12 +36,14 @@ extension MyService: TargetType{
             return "/surveys/\(id)"
         case .createGrades( _):
             return "/grades"
+        case .editInterview(let interviewId, _, _):
+            return "/interviews/\(interviewId)"
         }
     }
     
     var method: Moya.Method{
         switch self {
-        case .requestToken,.createGrades:
+        case .requestToken,.createGrades,.editInterview:
             return .post
         case .getSingleUser,.getInterviewsResults,.getInterviewList,.getSurveyList:
             return .get
@@ -65,6 +68,9 @@ extension MyService: TargetType{
             return .requestParameters(parameters: ["format":"json"], encoding: URLEncoding.queryString)
         case .createGrades(grade: let grade):
             return .requestParameters(parameters: ["value":"\(grade.value)","question_id":"\(grade.questionId)","interview_id":"\(grade.interviewId)"], encoding: URLEncoding.queryString)
+//            TODO : Изменить запрос на получение только коммента
+        case .editInterview(interviewId: let interviewId, surveyId: let surveyId, comment: let comment):
+            return .requestParameters(parameters: ["target_user_id": "\(interviewId)", "survey_id": "\(surveyId)", "comment": "\(comment)"], encoding: URLEncoding.queryString)
         }
     }
     
