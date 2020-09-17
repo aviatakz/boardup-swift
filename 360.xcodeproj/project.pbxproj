@@ -40,10 +40,11 @@
 		A3A1F63A24C8B52D00BAC778 /* RadarChartXValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63924C8B52D00BAC778 /* RadarChartXValueFormatter.swift */; };
 		A3A1F63C24C8BBF400BAC778 /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */; };
 		A3A1F63E24C8CC0A00BAC778 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1F63D24C8CC0A00BAC778 /* Constants.swift */; };
+		A3BEC6BE2512367100909108 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BEC6BD2512367100909108 /* LocalData.swift */; };
+		A3BEC6C02512369200909108 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BEC6BF2512369200909108 /* Objects.swift */; };
 		A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */; };
 		A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */; };
 		A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */; };
-		A3EAE54424B852D2006B41C7 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAE54324B852D2006B41C7 /* Structures.swift */; };
 		C50443C124C454E4003CA29C /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50443C024C454E4003CA29C /* SurveyViewController.swift */; };
 		C51D690A24CA7108006E3502 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
@@ -85,10 +86,11 @@
 		A3A1F63924C8B52D00BAC778 /* RadarChartXValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartXValueFormatter.swift; sourceTree = "<group>"; };
 		A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		A3A1F63D24C8CC0A00BAC778 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A3BEC6BD2512367100909108 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		A3BEC6BF2512369200909108 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		A3C814CD24BF26CE00D834F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3C814CF24BF286200D834F3 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		A3EAE53D24B7129E006B41C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A3EAE54324B852D2006B41C7 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		C50443C024C454E4003CA29C /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C51D690924CA7108006E3502 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		EB0339FDA03230FF4FCA8A82 /* Pods-360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-360.debug.xcconfig"; path = "Target Support Files/Pods-360/Pods-360.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +152,8 @@
 		A353DD8224B6F3C1001AE486 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3EAE54324B852D2006B41C7 /* Structures.swift */,
+				A3BEC6BF2512369200909108 /* Objects.swift */,
+				A3BEC6BD2512367100909108 /* LocalData.swift */,
 				A393865F250A34EC0099C0F1 /* User.swift */,
 				A3938661250A350F0099C0F1 /* Group.swift */,
 				A3938663250A35260099C0F1 /* InterviewList.swift */,
@@ -179,6 +182,8 @@
 		A354D40F24CEAACA00B75669 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
+				A39386A0250FF1A00099C0F1 /* Observable.swift */,
 				C51D690624CA70A4006E3502 /* fonts */,
 				A3A1F63924C8B52D00BAC778 /* RadarChartXValueFormatter.swift */,
 				A353DD7724B6F272001AE486 /* Assets.xcassets */,
@@ -208,7 +213,6 @@
 				A3938677250A44B50099C0F1 /* LoginViewModel.swift */,
 				A39386A2250FFF630099C0F1 /* QuestionsViewModel.swift */,
 				A39386A425100D2C0099C0F1 /* DiagramViewModel.swift */,
-				A393865E250A34A10099C0F1 /* Helpers */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,15 +223,6 @@
 				A31F75EE24E56B0E000AC3AD /* MyService.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		A393865E250A34A10099C0F1 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A39386A0250FF1A00099C0F1 /* Observable.swift */,
-				A3A1F63B24C8BBF400BAC778 /* RadarChart.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C35FFD62B48816FEFFD951BF /* Pods */ = {
@@ -406,9 +401,9 @@
 				A3EAE53E24B7129E006B41C7 /* LoginViewController.swift in Sources */,
 				A393867A250A57BB0099C0F1 /* ProfileViewModel.swift in Sources */,
 				A3C814CE24BF26CE00D834F3 /* ProfileViewController.swift in Sources */,
+				A3BEC6C02512369200909108 /* Objects.swift in Sources */,
 				A3938660250A34EC0099C0F1 /* User.swift in Sources */,
 				A3938678250A44B50099C0F1 /* LoginViewModel.swift in Sources */,
-				A3EAE54424B852D2006B41C7 /* Structures.swift in Sources */,
 				A3938670250A35F80099C0F1 /* Question.swift in Sources */,
 				A3938664250A35260099C0F1 /* InterviewList.swift in Sources */,
 				A39386A1250FF1A00099C0F1 /* Observable.swift in Sources */,
@@ -419,6 +414,7 @@
 				A353DD6F24B6F270001AE486 /* AppDelegate.swift in Sources */,
 				A39386A3250FFF630099C0F1 /* QuestionsViewModel.swift in Sources */,
 				A3C814D024BF286200D834F3 /* QuestionsViewController.swift in Sources */,
+				A3BEC6BE2512367100909108 /* LocalData.swift in Sources */,
 				A393866A250A359F0099C0F1 /* ResultAVG.swift in Sources */,
 				A3938673250A36160099C0F1 /* Grade.swift in Sources */,
 				A3938668250A35870099C0F1 /* Results.swift in Sources */,

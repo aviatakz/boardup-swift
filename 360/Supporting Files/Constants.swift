@@ -22,6 +22,7 @@ struct Key {
         static let cell = "cell"
         static let signIn = "tabBarController"
         static let afterQuestions = "segueSurveyView"
+        static let myNotificationKey = "com.bobthedeveloper.notificationKey"
     }
     struct defaultsKey {
         static let numberOfQuestion = "questionId"
