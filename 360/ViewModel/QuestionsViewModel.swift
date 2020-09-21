@@ -15,7 +15,7 @@ class QuestionsViewModel {
     
     func fetchData() {
     let provider = MoyaProvider<MyService>(plugins: [AccessTokenPlugin { _ in LocalData.token}])
-        provider.request(.getInterviewList(userId: 16)) { result in
+        provider.request(.getInterviewList(userId: LocalData.userId)) { result in
             switch result {
                 case let .success(moyaResponse):
                     do {

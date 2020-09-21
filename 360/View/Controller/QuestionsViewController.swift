@@ -18,7 +18,7 @@ class QuestionsViewController: UIViewController {
         tableView.allowsSelection = true
         NotificationCenter.default.addObserver(self,
         selector: #selector(doThisWhenNotify),
-        name: NSNotification.Name(rawValue: myNotificationKey),
+        name: NSNotification.Name(rawValue: Key.Identifier.myNotificationKey),
         object: nil)
         viewModel.interviewListSelf.bind { _ in
             self.tableView.reloadData()

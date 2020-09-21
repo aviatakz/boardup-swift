@@ -14,7 +14,7 @@ class DiagramViewModel {
     var radarView = Observable<Bool>(false)
     func fetchData() {
         let provider = MoyaProvider<MyService>(plugins: [AccessTokenPlugin { _ in LocalData.token}])
-        provider.request(.getInterviewsResults(userId: 16, surveyId: 41)) { result in //for test user id 16 suvey id 41
+        provider.request(.getInterviewsResults(userId: LocalData.userId, surveyId: LocalData.surveyId)) { result in //for test user id 16 suvey id 41
         switch result {
             case let .success(moyaResponse):
                 do {
@@ -29,6 +29,7 @@ class DiagramViewModel {
             }
         }
     }
+    
     func updateView(view: UIView) {
         if view.subviews.count > 0{
             view.subviews[0].removeFromSuperview()

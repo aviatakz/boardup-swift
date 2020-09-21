@@ -21,12 +21,32 @@ class LoginViewModel {
                     let tokenAndUser = try decoder.decode(Token.self, from: data)
                     LocalData.token = tokenAndUser.token
                     LocalData.userId = tokenAndUser.user.id
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: self)
+                    self.setSurveyId()
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: Key.Identifier.myNotificationKey), object: self)
                 }catch{
                     print("Error with decoding News: \(error)")
                 }
             case .failure(_): break
             }
+        }
+    }
+    
+    func setSurveyId() {
+        let provider = MoyaProvider<MyService>(plugins: [AccessTokenPlugin { _ in LocalData.token}])
+        provider.request(.getSurveyList(id: LocalData.userId)) { result in
+        switch result {
+            case let .success(moyaResponse):
+                    do {
+                        let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+                        let results = try filteredResponse.map(Survey.self)
+                        if results.is_active{
+                            LocalData.surveyId = results.id
+                        }
+                    }catch{
+                        print("Error with decoding survey result \(error)")
+                    }
+            case .failure(_): break
+                }
         }
     }
 }
