@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
         setLoader()
         NotificationCenter.default.addObserver(self,
         selector: #selector(doThisWhenNotify),
-        name: NSNotification.Name(rawValue: myNotificationKey),
+        name: NSNotification.Name(rawValue: Key.Identifier.myNotificationKey),
         object: nil)
         viewModel.userInfo.bind { _ in
             self.setInfo()
@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
     func setLoader() {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
 
         alert.view.addSubview(loadingIndicator)

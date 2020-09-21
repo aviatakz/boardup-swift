@@ -11,8 +11,8 @@ import Foundation
 struct Survey : Decodable {
     let id: Int
     let name: String
-    let startDate: String
-    let endDate: String
-    let isActive: Bool
+    let start_date: String
+    let end_date: String
+    let is_active: Bool
     let questions: [Question]
 }

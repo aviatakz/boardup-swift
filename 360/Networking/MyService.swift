@@ -32,7 +32,7 @@ extension MyService: TargetType{
         case .getInterviewList( _):
             return "/interviews/"
         case .getSurveyList(let id):
-            return "/surveys/\(id)"
+            return "/surveys/\(id)/"
         case .createGrades( _):
             return "/grades"
         }
@@ -62,7 +62,7 @@ extension MyService: TargetType{
         case .getInterviewList(userId: let userId):
             return .requestParameters(parameters: ["user":userId], encoding: URLEncoding.queryString)
         case .getSurveyList(id: _):
-            return .requestParameters(parameters: ["format":"json"], encoding: URLEncoding.queryString)
+            return .requestPlain
         case .createGrades(grade: let grade):
             return .requestParameters(parameters: ["value":"\(grade.value)","question_id":"\(grade.questionId)","interview_id":"\(grade.interviewId)"], encoding: URLEncoding.queryString)
         }
